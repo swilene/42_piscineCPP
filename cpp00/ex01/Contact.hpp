@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 10:46:55 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/11 17:57:23 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/11 18:14:13 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ class	Contact{
 		~Contact(void);
 
 		void	setContact(void);
+		void	getContact(void);
 
 		char	first_name[50];
 		char	last_name[50];
