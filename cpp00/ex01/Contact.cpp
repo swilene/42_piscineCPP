@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 11:21:03 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/12 14:32:30 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/12 18:51:43 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,43 +20,97 @@ Contact::Contact(void)
 	return ;
 }
 
-void	Contact::setContact(void)
+std::string	Contact::getFirstName(int i)
 {
-	while (this->first_name.empty())
-	{
-		std::cout << "Enter a first name: ";
-		std::getline (std::cin, this->first_name);
-	}
-	while (this->last_name.empty())
-	{
-		std::cout << "Enter a last name: ";
-		std::getline (std::cin, this->last_name);
-	}
-	while (this->nickname.empty())
-	{
-		std::cout << "Enter a nickname: ";
-		std::getline (std::cin, this->nickname);
-	}
-	while (this->phone_number.empty())
-	{
-		std::cout << "Enter a phone number: ";
-		std::getline (std::cin, this->phone_number);
-	}
-	while (this->darkest_secret.empty())
-	{
-		std::cout << "What is " << this->first_name << "'s darkest secret ? ";
-		std::getline (std::cin, this->darkest_secret);
-	}
-	std::cout << "Contact successfuly created!" << std::endl;
+	return (this->_first_name[i % 8]);
 }
 
-void	Contact::getContact(void)
+void	Contact::setFirstName(int i)
 {
-	std::cout << "First name: " << this->first_name << std::endl
-		<< "Last name: " << this->last_name << std::endl
-		<< "Nickname: " << this->nickname << std::endl
-		<< "Phone number: " << this->phone_number << std::endl
-		<< "Darkest secret: " << this->darkest_secret << std::endl;
+	this->_first_name[i % 8].clear();
+	while (this->_first_name[i % 8].empty())
+	{
+		std::cout << "Enter a first name: ";
+		std::getline (std::cin, this->_first_name[i % 8]);
+	}
+}
+
+std::string	Contact::getLastName(int i)
+{
+	return (this->_last_name[i % 8]);
+}
+
+void	Contact::setLastName(int i)
+{
+	this->_last_name[i % 8].clear();
+	while (this->_last_name[i % 8].empty())
+	{
+		std::cout << "Enter a last name: ";
+		std::getline (std::cin, this->_last_name[i % 8]);
+	}
+}
+
+std::string	Contact::getNickname(int i)
+{
+	return (this->_nickname[i % 8]);
+}
+
+void	Contact::setNickname(int i)
+{
+	this->_nickname[i % 8].clear();
+	while (this->_nickname[i % 8].empty())
+	{
+		std::cout << "Enter a nickname: ";
+		std::getline (std::cin, this->_nickname[i % 8]);
+	}
+}
+
+std::string	Contact::getPhoneNumber(int i)
+{
+	return (this->_phone_number[i % 8]);
+}
+
+void	Contact::setPhoneNumber(int i)
+{
+	this->_phone_number[i % 8].clear();
+	while (this->_phone_number[i % 8].empty())
+	{
+		std::cout << "Enter a phone number: ";
+		std::getline (std::cin, this->_phone_number[i % 8]);
+	}
+}
+
+std::string	Contact::getDarkestSecret(int i)
+{
+	return (this->_darkest_secret[i % 8]);
+}
+
+void	Contact::setDarkestSecret(int i)
+{
+	this->_darkest_secret[i % 8].clear();
+	while (this->_darkest_secret[i % 8].empty())
+	{
+		std::cout << "What is " << this->getFirstName(i) << "'s darkest secret ? ";
+		std::getline (std::cin, this->_darkest_secret[i % 8]);
+	}
+}
+
+void	Contact::printContact(int i)
+{
+	std::cout << "First name: " << this->getFirstName(i) << std::endl
+		<< "Last name: " << this->getLastName(i) << std::endl
+		<< "Nickname: " << this->getNickname(i) << std::endl
+		<< "Phone number: " << this->getPhoneNumber(i) << std::endl
+		<< "Darkest secret: " << this->getDarkestSecret(i) << std::endl;
+}
+
+void	Contact::addContact(int i)
+{
+	this->setFirstName(i);
+	this->setLastName(i);
+	this->setNickname(i);
+	this->setPhoneNumber(i);
+	this->setDarkestSecret(i);
 }
 
 Contact::~Contact(void)
