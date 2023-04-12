@@ -5,13 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 10:46:55 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/11 18:14:13 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/12 14:28:55 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/12 14:33:42 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_HPP
 # define CONTACT_HPP
+
+#include <string>
 
 class	Contact{
 	public:
@@ -21,11 +23,11 @@ class	Contact{
 		void	setContact(void);
 		void	getContact(void);
 
-		char	first_name[50];
-		char	last_name[50];
-		char	nickname[50];
-		char	phone_number[50];
-		char	darkest_secret[100];
+		std::string	first_name;
+		std::string	last_name;
+		std::string	nickname;
+		std::string	phone_number;
+		std::string	darkest_secret;
 };
 
 #endif
