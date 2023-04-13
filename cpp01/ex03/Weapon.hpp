@@ -1,37 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 14:27:43 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/13 11:58:46 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/13 13:33:11 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/13 16:26:10 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef WEAPON_HPP
+# define WEAPON_HPP
 
 #include <string>
 
-#include "Contact.hpp"
-
-class	PhoneBook
+class	Weapon
 {
 	public:
-		PhoneBook(void);
-		~PhoneBook(void);
+		Weapon(std::string type);
+		~Weapon(void);
 
-
-		void	setPhoneBook(Contact contacts);
-		void	printContact(int i);
-		void	printPhoneBook(Contact contacts);
+		std::string	const	getType(void);
+		void				setType(std::string type);
 
 	private:
-		std::string	_first_name[8];
-		std::string	_last_name[8];
-		std::string	_nickname[8];
+		std::string	_type;
 };
 
 #endif

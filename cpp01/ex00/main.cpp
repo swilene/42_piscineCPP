@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 23:05:56 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/12 23:59:23 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/13 11:59:19 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ int	main(void){
 	foo->announce();
 	randomChump("Bar");
 	delete foo;
+	return (0);
 }

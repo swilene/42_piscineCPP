@@ -6,7 +6,7 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/12 14:26:43 by saguesse         ###   ########.fr        #
+#    Updated: 2023/04/13 15:09:56 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ INCLUDE_FILES = Contact.hpp \
 
 OBJ = $(SRC_FILES:.cpp=.o)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(INCLUDE_FILES)
 	$(CXX) $(OBJ) -o $(NAME) $(INCLUDE_FILES)
 
 %.o : %.c $(INCLUDE_FILES)

@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 14:27:43 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/13 11:58:46 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/12 23:05:56 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/13 12:00:00 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include <iostream>
 
-#include <string>
+#include "Zombie.hpp"
 
-#include "Contact.hpp"
+Zombie*	zombieHorde(int N, std::string name);
 
-class	PhoneBook
+int	main(void)
 {
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
-
-
-		void	setPhoneBook(Contact contacts);
-		void	printContact(int i);
-		void	printPhoneBook(Contact contacts);
-
-	private:
-		std::string	_first_name[8];
-		std::string	_last_name[8];
-		std::string	_nickname[8];
-};
-
-#endif
+	int	N = 10;
+	Zombie*	zombies = zombieHorde(N, "Foo");
+	for (int i = 0; i < N; i++)
+		zombies[i].announce();
+	delete [] zombies;
+	return (0);
+}

@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/12 14:28:55 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/12 18:44:35 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/13 11:58:12 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 #include <string>
 
-class	Contact{
+class	Contact
+{
 	public:
 		Contact(void);
 		~Contact(void);

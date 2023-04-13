@@ -6,21 +6,23 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/13 16:03:30 by saguesse         ###   ########.fr        #
+#    Updated: 2023/04/13 15:13:59 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = weapon
 CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 RM = rm -f
 
 SRC_FILES = main.cpp \
-			Zombie.cpp \
-			newZombie.cpp \
-			randomChump.cpp
+			Weapon.cpp \
+			HumanA.cpp \
+			HumanB.cpp
 
-INCLUDE_FILES = Zombie.hpp \
+INCLUDE_FILES = Weapon.hpp \
+				HumanA.hpp \
+				HumanB.hpp
 
 OBJ = $(SRC_FILES:.cpp=.o)
 

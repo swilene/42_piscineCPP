@@ -5,40 +5,27 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 11:50:56 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/13 10:38:11 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/13 11:21:28 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/13 13:27:18 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstring>
 #include <string>
-
-#include "Contact.hpp"
-#include "PhoneBook.hpp"
 
 int	main(void)
 {
-	int			i = 0;
-	std::string	enter;
-	Contact		contacts;
-	PhoneBook	phone_book;
+	std::string 	string = "HI THIS IS BRAIN";
+	std::string*	stringPTR = &string;
+	std::string&	stringREF = string;
 
-	while (1)
-	{
-		std::cout << "Enter one of the options: [ADD, SEARCH, EXIT]" << std::endl;
-		std::getline (std::cin, enter);
-		if (enter == "ADD")
-		{
-			contacts.addContact(i);
-			i++;
-		}
-		else if (enter == "SEARCH")
-			phone_book.setPhoneBook(contacts);
-		else if (enter == "EXIT")
-			break ;
-		enter.clear();
-		std::cout << "\n";
-	}
-	return (0);
+	std::cout << "string: " << &string << std::endl;
+	std::cout << "stringPTR: " << stringPTR << std::endl;
+	std::cout << "stringREF: " << &stringREF << std::endl;
+
+	std::cout << "\n";
+
+	std::cout << "string: " << string << std::endl;
+	std::cout << "stringPTR: " << *stringPTR << std::endl;
+	std::cout << "stringREF: " << stringREF << std::endl;
 }

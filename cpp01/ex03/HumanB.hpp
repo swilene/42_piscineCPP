@@ -1,37 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 14:27:43 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/13 11:58:46 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/13 15:14:32 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/13 17:49:37 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef HUMANB_HPP
+# define HUMANB_HPP
 
 #include <string>
 
-#include "Contact.hpp"
+#include "Weapon.hpp"
 
-class	PhoneBook
+class	HumanB
 {
 	public:
-		PhoneBook(void);
-		~PhoneBook(void);
+		HumanB(std::string name);
+		~HumanB(void);
 
-
-		void	setPhoneBook(Contact contacts);
-		void	printContact(int i);
-		void	printPhoneBook(Contact contacts);
+		void	setWeapon(Weapon* club);
+		void	attack(void);
 
 	private:
-		std::string	_first_name[8];
-		std::string	_last_name[8];
-		std::string	_nickname[8];
+		std::string	_name;
+		Weapon*		_weapon;
 };
 
 #endif

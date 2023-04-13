@@ -1,37 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   HumanB.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 14:27:43 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/13 11:58:46 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/13 15:14:43 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/13 17:49:20 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#include <iostream>
 
-#include <string>
+#include "HumanB.hpp"
 
-#include "Contact.hpp"
-
-class	PhoneBook
+HumanB::HumanB(std::string name) : _name(name)
 {
-	public:
-		PhoneBook(void);
-		~PhoneBook(void);
+	return ;
+}
 
+HumanB::~HumanB(void)
+{
+	return ;
+}
 
-		void	setPhoneBook(Contact contacts);
-		void	printContact(int i);
-		void	printPhoneBook(Contact contacts);
+void	HumanB::setWeapon(Weapon* club)
+{
+	this->_weapon = club;
+}
 
-	private:
-		std::string	_first_name[8];
-		std::string	_last_name[8];
-		std::string	_nickname[8];
-};
-
-#endif
+void	HumanB::attack(void)
+{
+	std::cout << this->_name << " attacks with their " << this->_weapon->getType() << std::endl;
+}

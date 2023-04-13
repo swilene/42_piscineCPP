@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 14:33:21 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/12 18:55:40 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/13 10:40:47 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,8 @@ void	PhoneBook::printPhoneBook(Contact contacts)
 		std::getline (std::cin, index);
 		if (index.size() > 1 || index < "1" || index > "8")
 		{
-			std::cout << "Index must be a number be between 1 and 8!" << std::endl;
+			std::cout << "Index must be a number be between 1 and 8!";
+			std::cout << "\n\n";
 			index.clear();
 		}
 	}

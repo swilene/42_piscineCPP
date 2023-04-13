@@ -1,37 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBook.hpp                                      :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 14:27:43 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/13 11:58:46 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/13 13:39:16 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/13 14:58:31 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PHONEBOOK_HPP
-# define PHONEBOOK_HPP
+#ifndef HUMANA_HPP
+# define HUMANA_HPP
 
 #include <string>
 
-#include "Contact.hpp"
+#include "Weapon.hpp"
 
-class	PhoneBook
+class	HumanA
 {
 	public:
-		PhoneBook(void);
-		~PhoneBook(void);
+		HumanA(std::string name, Weapon & club);
+		~HumanA(void);
 
-
-		void	setPhoneBook(Contact contacts);
-		void	printContact(int i);
-		void	printPhoneBook(Contact contacts);
+		void	attack(void);
 
 	private:
-		std::string	_first_name[8];
-		std::string	_last_name[8];
-		std::string	_nickname[8];
+		std::string	_name;
+		Weapon&		_weapon;
 };
 
 #endif

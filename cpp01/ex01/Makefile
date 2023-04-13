@@ -6,7 +6,7 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/13 16:03:30 by saguesse         ###   ########.fr        #
+#    Updated: 2023/04/13 16:04:06 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,8 +17,7 @@ RM = rm -f
 
 SRC_FILES = main.cpp \
 			Zombie.cpp \
-			newZombie.cpp \
-			randomChump.cpp
+			zombieHorde.cpp
 
 INCLUDE_FILES = Zombie.hpp \
 

@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 11:21:03 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/12 18:51:43 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/13 11:57:59 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,11 @@
 #include "Contact.hpp"
 
 Contact::Contact(void)
+{
+	return ;
+}
+
+Contact::~Contact(void)
 {
 	return ;
 }
@@ -111,9 +116,5 @@ void	Contact::addContact(int i)
 	this->setNickname(i);
 	this->setPhoneNumber(i);
 	this->setDarkestSecret(i);
-}
-
-Contact::~Contact(void)
-{
-	return ;
+	std::cout << "Contact successfully created!" << std::endl;
 }

@@ -6,28 +6,23 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/13 16:03:30 by saguesse         ###   ########.fr        #
+#    Updated: 2023/04/13 11:40:35 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = zombie
+NAME = brain
 CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 RM = rm -f
 
 SRC_FILES = main.cpp \
-			Zombie.cpp \
-			newZombie.cpp \
-			randomChump.cpp
-
-INCLUDE_FILES = Zombie.hpp \
 
 OBJ = $(SRC_FILES:.cpp=.o)
 
-$(NAME): $(OBJ) $(INCLUDE_FILES)
-	$(CXX) $(OBJ) -o $(NAME) $(INCLUDE_FILES)
+$(NAME): $(OBJ)
+	$(CXX) $(OBJ) -o $(NAME)
 
-%.o : %.c $(INCLUDE_FILES)
+%.o : %.c
 	$(CXX) $(CXXFLAGS) -c $< -o
 
 all: $(NAME)
