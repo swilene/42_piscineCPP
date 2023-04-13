@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 11:50:56 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/13 10:38:11 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/13 21:57:56 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/13 22:09:37 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	main(void)
 {
 	int			i = 0;
 	std::string	enter;
-	Contact		contacts;
 	PhoneBook	phone_book;
 
 	while (1)
@@ -30,11 +29,11 @@ int	main(void)
 		std::getline (std::cin, enter);
 		if (enter == "ADD")
 		{
-			contacts.addContact(i);
+			phone_book.addContact(i);
 			i++;
 		}
 		else if (enter == "SEARCH")
-			phone_book.setPhoneBook(contacts);
+			phone_book.printPhoneBook();
 		else if (enter == "EXIT")
 			break ;
 		enter.clear();

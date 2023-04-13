@@ -5,14 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/11 14:33:21 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/13 10:40:47 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/13 21:45:31 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/13 22:41:23 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <iomanip>
 #include "PhoneBook.hpp"
+#include "Contact.hpp"
 
 PhoneBook::PhoneBook(void)
 {
@@ -24,7 +23,26 @@ PhoneBook::~PhoneBook(void)
 	return ;
 }
 
-void	PhoneBook::printPhoneBook(Contact contacts)
+void	PhoneBook::addContact(int i)
+{
+	this->_contacts[i % 8].setFirstName();
+	this->_contacts[i % 8].setLastName();
+	this->_contacts[i % 8].setNickname();
+	this->_contacts[i % 8].setPhoneNumber();
+	this->_contacts[i % 8].setDarkestSecret();
+	std::cout << "Contact successfully created!" << std::endl;
+}
+
+std::string	PhoneBook::resize(std::string str)
+{
+	if (str.size() < 11)
+		return (str);
+	str.resize(10);
+	str.replace(9, 1, ".");
+	return (str);
+}
+
+void	PhoneBook::printPhoneBook(void)
 {
 	std::string	index;
 
@@ -38,9 +56,9 @@ void	PhoneBook::printPhoneBook(Contact contacts)
 	{
 		std::cout << "| "
 			<< std::setw(10) << i + 1 << " | "
-			<< std::setw(10) << this->_first_name[i % 8] << " | "
-			<< std::setw(10) << this->_last_name[i % 8] << " | "
-			<< std::setw(10) << this->_nickname[i % 8]
+			<< std::setw(10) << this->resize(this->_contacts[i % 8].getFirstName()) << " | "
+			<< std::setw(10) << this->resize(this->_contacts[i % 8].getLastName()) << " | "
+			<< std::setw(10) << this->resize(this->_contacts[i % 8].getNickname())
 			<< " |" << std::endl;
 	}
 	while (index.empty())
@@ -54,34 +72,6 @@ void	PhoneBook::printPhoneBook(Contact contacts)
 			index.clear();
 		}
 	}
-	contacts.printContact(index[0] - '0' - 1);
+	this->_contacts[index[0] - '0' - 1].printContact();
 	index.clear();
-}
-
-void	PhoneBook::setPhoneBook(Contact contacts)
-{
-	PhoneBook	phone_book;
-
-	for (int i = 0; i < 8; i++)
-	{
-		phone_book._first_name[i % 8] = contacts.getFirstName(i);
-		if (phone_book._first_name[i % 8].size() > 10)
-		{
-			phone_book._first_name[i % 8].resize(10);
-			phone_book._first_name[i % 8].replace(9, 1, ".");
-		}
-		phone_book._last_name[i % 8] = contacts.getLastName(i);
-		if (phone_book._last_name[i % 8].size() > 10)
-		{
-			phone_book._last_name[i % 8].resize(10);
-			phone_book._last_name[i % 8].replace(9, 1, ".");
-		}
-		phone_book._nickname[i % 8] = contacts.getNickname(i);
-		if (phone_book._nickname[i % 8].size() > 10)
-		{
-			phone_book._nickname[i % 8].resize(10);
-			phone_book._nickname[i % 8].replace(9, 1, ".");
-		}
-	}
-	phone_book.printPhoneBook(contacts);
 }

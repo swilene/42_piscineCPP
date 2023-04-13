@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 14:27:43 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/13 11:58:46 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/13 21:36:15 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/13 22:43:25 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PHONEBOOK_HPP
 
 #include <string>
+#include <iomanip>
 
 #include "Contact.hpp"
 
@@ -23,15 +24,12 @@ class	PhoneBook
 		PhoneBook(void);
 		~PhoneBook(void);
 
-
-		void	setPhoneBook(Contact contacts);
-		void	printContact(int i);
-		void	printPhoneBook(Contact contacts);
+		void		addContact(int i);
+		void		printPhoneBook(void);
+		std::string	resize(std::string str);
 
 	private:
-		std::string	_first_name[8];
-		std::string	_last_name[8];
-		std::string	_nickname[8];
+		Contact	_contacts[8];
 };
 
 #endif
