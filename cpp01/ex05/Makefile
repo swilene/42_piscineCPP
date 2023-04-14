@@ -6,11 +6,11 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/14 11:47:18 by saguesse         ###   ########.fr        #
+#    Updated: 2023/04/14 13:49:01 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = Harl
+NAME = harl
 CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 RM = rm -f
