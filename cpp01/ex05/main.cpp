@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 13:48:39 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/16 18:00:42 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/16 23:51:35 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ int	main()
 
 	std::cout << "Debug:" << std::endl;
 	harl.complain("debug");
-	std::cout << "Info:" << std::endl;
+	std::cout << "\nInfo:" << std::endl;
 	harl.complain("info");
-	std::cout << "Warning:" << std::endl;
+	std::cout << "\nWarning:" << std::endl;
 	harl.complain("warning");
-	std::cout << "Error:" << std::endl;
+	std::cout << "\nError:" << std::endl;
 	harl.complain("error");
 }
