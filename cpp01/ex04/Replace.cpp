@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:01:33 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/14 17:12:23 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/16 17:05:16 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,18 @@ void	Replace::replaceString(void)
 		return ;
 	}
 
-	std::string	word;
-	while (infile >> word)
+	std::string	str;
+	size_t		pos;
+	while (std::getline(infile, str))
 	{
-		if (word == this->_s1)
-			outfile << _s2;
-		else
-			outfile << word;
+		pos = str.find(this->_s1, 0);
+		while (pos != std::string::npos)
+		{
+			str.erase(pos, this->_s1.size());
+			str.insert(pos, this->_s2);
+			pos = str.find(this->_s1, pos);
+		}
+		outfile << str;
+		outfile << "\n";
 	}
 }

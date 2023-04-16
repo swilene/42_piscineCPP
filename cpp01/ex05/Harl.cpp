@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/14 11:51:37 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/14 12:16:50 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/16 18:03:46 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Harl::~Harl(void)
 
 void	Harl::complain(std::string level)
 {
-	
+	void	(Harl::*test)(void) const;
 }
 
 void	Harl::_debug(void)
