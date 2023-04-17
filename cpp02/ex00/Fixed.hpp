@@ -1,27 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/12 23:05:56 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/17 11:13:10 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/17 16:15:04 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/17 16:40:06 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#ifndef FIXED_HPP
+# define FIXED_HPP
+
 #include <iostream>
+#include <string>
 
-#include "Zombie.hpp"
-
-Zombie*	zombieHorde(int N, std::string name);
-
-int	main(void)
+class	Fixed
 {
-	int	N = 7;
-	Zombie*	zombies = zombieHorde(N, "Foo");
-	for (int i = 0; i < N; i++)
-		zombies[i].announce();
-	delete [] zombies;
-	return (0);
-}
+	public:
+		Fixed(void);
+		Fixed(Fixed const & src);
+		~Fixed(void);
+
+		Fixed & operator=(Fixed const & rhs);
+	
+	private:
+		int					_fixed_point;
+		static const int	bits;
+};
+
+#endif
