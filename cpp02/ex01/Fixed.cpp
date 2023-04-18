@@ -6,15 +6,29 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:18:32 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/18 19:38:08 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/18 20:00:30 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(void) : _integer(0)
+Fixed::Fixed(void)
 {
 	std::cout << "Default constructor called" << std::endl;
+
+	return ;
+}
+
+Fixed::Fixed(int const i) : _integer(i)
+{
+	std::cout << "Int constructor called" << std::endl;
+
+	return ;
+}
+
+Fixed::Fixed(float const f) : _decimal(f)
+{
+	std::cout << "Float constructor called" << std::endl;
 
 	return ;
 }
@@ -56,4 +70,21 @@ void	Fixed::setRawBits(int const raw)
 	this->_integer = raw;
 
 	return ;
+}
+
+float   Fixed::toFloat(void) const
+{
+	this->_integer = this->_decimal;
+}
+
+int   Fixed::toInt(void) const
+{
+	this->_decimal = this->_integer;
+}
+
+std::ostream & operator<<(std::ostream & o, Fixed const & rhs)
+{
+	o << rhs.toFloat();
+
+	return (o);
 }
