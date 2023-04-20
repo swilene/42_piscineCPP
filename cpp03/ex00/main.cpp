@@ -1,36 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/17 16:15:04 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/19 00:03:39 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/19 21:07:45 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/20 18:07:16 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
+#include "ClapTrap.hpp"
 
-#include <iostream>
-#include <string>
-
-class	Fixed
+int	main()
 {
-	public:
-		Fixed(void);
-		Fixed(Fixed const & src);
-		~Fixed(void);
+	ClapTrap	claptrap("Riri");
 
-		Fixed & operator=(Fixed const & rhs);
+	claptrap.attack("Gripsou");
+	claptrap.printPoints();
+	claptrap.takeDamage(2);
+	claptrap.printPoints();
+	claptrap.beRepaired(3);
+	claptrap.printPoints();
 
-		int		getRawBits(void) const;
-		void	setRawBits(int const raw);
-	
-	private:
-		int					_fixed_point;
-		static const int	_fract = 8;
-};
-
-#endif
+	return (0);
+}

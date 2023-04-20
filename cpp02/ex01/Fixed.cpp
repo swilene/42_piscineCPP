@@ -6,29 +6,40 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:18:32 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/18 20:00:30 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/19 18:59:27 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed(void)
+Fixed::Fixed(void) : _fixed_point(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 
 	return ;
 }
 
-Fixed::Fixed(int const i) : _integer(i)
+Fixed::Fixed(int const i)
 {
 	std::cout << "Int constructor called" << std::endl;
+
+	this->_fixed_point = i << this->_fract;
 
 	return ;
 }
 
-Fixed::Fixed(float const f) : _decimal(f)
+Fixed::Fixed(float const f)
 {
 	std::cout << "Float constructor called" << std::endl;
+
+	this->_fixed_point = roundf(f *(1 << this->_fract));
+
+	return ;
+}
+
+Fixed::~Fixed(void)
+{
+	std::cout << "Destructor called" << std::endl;
 
 	return ;
 }
@@ -46,40 +57,31 @@ Fixed & Fixed::operator=(Fixed const & rhs)
 	std::cout << "Copy assignment operator called" << std::endl;
 
 	if (this != &rhs)
-		this->_integer = rhs.getRawBits();
+		this->_fixed_point = rhs.getRawBits();
 
 	return (*this);
 }
 
-Fixed::~Fixed(void)
-{
-	std::cout << "Destructor called" << std::endl;
-
-	return ;
-}
-
 int	Fixed::getRawBits(void) const
 {
-	std::cout << "getRawBits member function called" << std::endl;
-
-	return (this->_integer);
+	return (this->_fixed_point);
 }
 
 void	Fixed::setRawBits(int const raw)
 {
-	this->_integer = raw;
+	this->_fixed_point = raw;
 
 	return ;
 }
 
 float   Fixed::toFloat(void) const
 {
-	this->_integer = this->_decimal;
+	return ((float)(this->_fixed_point) / (float)(1 << this->_fract));
 }
 
 int   Fixed::toInt(void) const
 {
-	this->_decimal = this->_integer;
+	return (this->_fixed_point >> this->_fract);
 }
 
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs)
