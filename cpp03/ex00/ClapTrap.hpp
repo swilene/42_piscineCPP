@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 20:04:37 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/21 12:10:49 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/21 14:30:56 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,11 +19,11 @@
 class ClapTrap
 {
 	public:
-		ClapTrap(void);
+		ClapTrap(void); //default constructor
 		ClapTrap(std::string name);
-		ClapTrap(ClapTrap const & src);
-		ClapTrap & operator=(ClapTrap const & rhs);
-		~ClapTrap(void);
+		ClapTrap(ClapTrap const & src); //copy constructor
+		ClapTrap & operator=(ClapTrap const & rhs); //copy assignment operator
+		~ClapTrap(void); //destructor
 
 		void	attack(const std::string& target);
 		void	takeDamage(unsigned int amount);
