@@ -15,6 +15,7 @@ class	$name
 		$name & operator=($name const & rhs); //copy assignment operator
 		~$name(void); //destructor
 
+	protected:
 	private:
 };
 
@@ -24,14 +25,14 @@ echo "#include \"$name.hpp\"
 
 $name::$name(void)
 {
-	std::cout << \"Default constructor called\" << std::endl;
+	std::cout << \"$name Default constructor called\" << std::endl;
 
 	return ;
 }
 
 $name::$name($name const & src)
 {
-	std::cout << \"Copy constructor called\" << std::endl;
+	std::cout << \"$name Copy constructor called\" << std::endl;
 	*this = src;
 
 	return ;
@@ -39,7 +40,7 @@ $name::$name($name const & src)
 
 $name & $name::operator=($name const & rhs)
 {
-	std::cout << \"Copy assignment operator called\" << std::endl;
+	std::cout << \"$name Copy assignment operator called\" << std::endl;
 
 	if (this != &rhs)
 	{
@@ -51,11 +52,9 @@ $name & $name::operator=($name const & rhs)
 
 $name::~$name(void)
 {
-	std::cout << \"Destructor called\" << std::endl;
+	std::cout << \"$name Destructor called\" << std::endl;
 
 	return ;
-}
-
-// *** Orthodox Canonical Form ***" >> $name.cpp
+}" >> $name.cpp
 }
 done

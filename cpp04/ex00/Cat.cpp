@@ -1,37 +1,53 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/04/21 18:45:16 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/21 19:05:24 by saguesse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Cat.hpp"
 
-Cat::Cat(void)
+Cat::Cat(void) : Animal()
 {
-	std::cout << "Default constructor called" << std::endl;
+	std::cout << "Cat Default constructor called" << std::endl;
 
 	return ;
 }
 
-Cat::Cat(Cat const & src)
+Cat::Cat(std::string type) : Animal(type)
 {
-	std::cout << "Copy constructor called" << std::endl;
-	*this = src;
+	std::cout << "Cat Parametric constructor called" << std::endl;
+}
+
+Cat::Cat(Cat const & src) : Animal(src)
+{
+	std::cout << "Cat Copy constructor called" << std::endl;
 
 	return ;
 }
 
 Cat & Cat::operator=(Cat const & rhs)
 {
-	std::cout << "Copy assignment operator called" << std::endl;
+	std::cout << "Cat Copy assignment operator called" << std::endl;
 
-	if (this != &rhs)
-	{
-
-	}
+	Animal::operator=(rhs);
 
 	return (*this);
 }
 
 Cat::~Cat(void)
 {
-	std::cout << "Destructor called" << std::endl;
+	std::cout << "Cat Destructor called" << std::endl;
 
 	return ;
 }
 
-// *** Orthodox Canonical Form ***
+void	Cat::makeSound(void) const
+{
+	std::cout << "Meow" << std::endl;
+}
