@@ -6,7 +6,7 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/21 18:35:47 by saguesse         ###   ########.fr        #
+#    Updated: 2023/04/24 11:01:44 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,15 @@ RM = rm -f
 SRC_FILES = main.cpp \
 			Animal.cpp \
 			Dog.cpp \
-			Cat.cpp
+			Cat.cpp \
+			WrongAnimal.cpp \
+			WrongCat.cpp
 
 INCLUDE_FILES = Animal.hpp \
 				Dog.hpp \
-				Cat.hpp
+				Cat.hpp \
+				WrongAnimal.hpp \
+				WrongCat.hpp
 
 OBJ = $(SRC_FILES:.cpp=.o)
 

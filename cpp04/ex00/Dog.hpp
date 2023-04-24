@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:41:58 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/21 19:12:25 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/24 10:08:05 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class	Dog : public Animal
 		Dog(std::string);
 		Dog(Dog const & src); //copy constructor
 		Dog & operator=(Dog const & rhs); //copy assignment operator
-		~Dog(void); //destructor
+		virtual ~Dog(void); //destructor
 
 		virtual void	makeSound(void) const;
 };

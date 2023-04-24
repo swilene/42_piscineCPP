@@ -6,20 +6,23 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:25:31 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/21 19:52:45 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/24 11:04:12 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int	main(void)
 {
-	const Animal*	animal = new Animal();
-	const Animal*	randomAnimal = new Animal("Random animal");
+	const Animal*	animal = new Animal;
 	const Animal*	dog = new Dog("Dog");
 	const Animal*	cat = new Cat("Cat");
+	const WrongAnimal*	wrongAnimal = new WrongAnimal;
+	const WrongAnimal*		wrongCat = new WrongCat("Wrong Cat");
 
 	std::cout << "\n" << std::endl;
 
@@ -27,14 +30,17 @@ int	main(void)
 	dog->makeSound();
 	std::cout << cat->getType() << ": ";
 	cat->makeSound();
-	std::cout << randomAnimal->getType() << ": ";
 	animal->makeSound();
+	wrongCat->makeSound();
+	wrongAnimal->makeSound();
 
 	std::cout << "\n" << std::endl;
 
-	//delete animal;
-	//delete dog;
-	//delete cat;
+	delete animal;
+	delete dog;
+	delete cat;
+	delete wrongAnimal;
+	delete wrongCat;
 
 	return (0);
 }
