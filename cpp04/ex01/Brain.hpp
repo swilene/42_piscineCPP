@@ -1,30 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 18:41:58 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/24 10:08:05 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/24 11:47:05 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/24 15:57:29 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#include "Animal.hpp"
+# include <iostream>
+# include <string>
 
-class	Dog : public Animal
+class	Brain
 {
 	public:
-		Dog(void); //default constructor
-		Dog(std::string type);
-		Dog(Dog const & src); //copy constructor
-		Dog & operator=(Dog const & rhs); //copy assignment operator
-		virtual ~Dog(void); //destructor
+		Brain(void); //default constructor
+		Brain(Brain const & src); //copy constructor
+		Brain & operator=(Brain const & rhs); //copy assignment operator
+		~Brain(void); //destructor
 
-		virtual void	makeSound(void) const;
+		void		setIdeas(std::string idea, int i);
+		std::string	getIdeas(int i);
+
+	protected:
+		std::string	_ideas[100];
 };
 
 #endif

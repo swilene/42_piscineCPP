@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   Materias.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 18:41:58 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/24 10:08:05 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/24 18:00:27 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/24 18:00:36 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-# define DOG_HPP
+#ifndef MATERIAS_HPP
+# define MATERIAS_HPP
 
-#include "Animal.hpp"
-
-class	Dog : public Animal
+class	AMaterias
 {
 	public:
-		Dog(void); //default constructor
-		Dog(std::string type);
-		Dog(Dog const & src); //copy constructor
-		Dog & operator=(Dog const & rhs); //copy assignment operator
-		virtual ~Dog(void); //destructor
+		AMaterias(void); //default constructor
+		AMaterias(AMaterias const & src); //copy constructor
+		AMaterias & operator=(AMaterias const & rhs); //copy assignment operator
+		~AMaterias(void); //destructor
 
-		virtual void	makeSound(void) const;
+	protected:
+	private:
 };
 
 #endif
