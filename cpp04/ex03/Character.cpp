@@ -1,35 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Materias.cpp                                       :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 18:00:08 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/24 18:00:18 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/25 14:29:22 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/25 18:06:35 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Materias.hpp"
+#include "Character.hpp"
 
-AMaterias::AMaterias(void)
+Character::Character(void)
 {
-	std::cout << "AMaterias Default constructor called" << std::endl;
+	std::cout << "Character Default constructor called" << std::endl;
 
 	return ;
 }
 
-AMaterias::AMaterias(AMaterias const & src)
+Character::Character(Character const & src)
 {
-	std::cout << "AMaterias Copy constructor called" << std::endl;
+	std::cout << "Character Copy constructor called" << std::endl;
 	*this = src;
 
 	return ;
 }
 
-AMaterias & AMaterias::operator=(AMaterias const & rhs)
+Character & Character::operator=(Character const & rhs)
 {
-	std::cout << "AMaterias Copy assignment operator called" << std::endl;
+	std::cout << "Character Copy assignment operator called" << std::endl;
 
 	if (this != &rhs)
 	{
@@ -39,9 +39,9 @@ AMaterias & AMaterias::operator=(AMaterias const & rhs)
 	return (*this);
 }
 
-AMaterias::~AMaterias(void)
+Character::~Character(void)
 {
-	std::cout << "AMaterias Destructor called" << std::endl;
+	std::cout << "Character Destructor called" << std::endl;
 
 	return ;
 }

@@ -1,25 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Materias.hpp                                       :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/24 18:00:27 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/24 18:00:36 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/25 14:13:23 by saguesse          #+#    #+#             */
+/*   Updated: 2023/04/25 18:06:26 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIAS_HPP
-# define MATERIAS_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
-class	AMaterias
+class	Ice
 {
 	public:
-		AMaterias(void); //default constructor
-		AMaterias(AMaterias const & src); //copy constructor
-		AMaterias & operator=(AMaterias const & rhs); //copy assignment operator
-		~AMaterias(void); //destructor
+		Ice(void); //default constructor
+		Ice(Ice const & src); //copy constructor
+		Ice & operator=(Ice const & rhs); //copy assignment operator
+		~Ice(void); //destructor
 
 	protected:
 	private:

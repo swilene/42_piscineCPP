@@ -6,23 +6,19 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/25 14:13:05 by saguesse         ###   ########.fr        #
+#    Updated: 2023/04/18 18:11:26 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = materias
+NAME = fixed
 CXX = g++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 RM = rm -f
 
 SRC_FILES = main.cpp \
-			Materia.cpp \
-			Ice.cpp \
-			Cure.cpp
+			Fixed.cpp
 
-INCLUDE_FILES = Materia.hpp \
-				Ice.hpp \
-				Cure.hpp
+INCLUDE_FILES = Fixed.hpp
 
 OBJ = $(SRC_FILES:.cpp=.o)
 
