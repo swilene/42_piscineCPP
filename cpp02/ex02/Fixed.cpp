@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:18:32 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/25 18:05:33 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/26 11:16:57 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,28 +94,60 @@ int	Fixed::operator!=(Fixed const & rhs) const
 
 Fixed	Fixed::operator+(Fixed const & rhs) const
 {
-	return (Fixed(this->_fixed_point + rhs.getRawBits()));
+	Fixed	res;
+
+	res.setRawBits(this->_fixed_point + rhs.getRawBits());
+	return (res);
 }
 
 Fixed	Fixed::operator-(Fixed const & rhs) const
 {
-	return (Fixed(this->_fixed_point - rhs.getRawBits()));
+	Fixed	res;
+
+	res.setRawBits(this->_fixed_point - rhs.getRawBits());
+	return (res);
 }
 
 Fixed	Fixed::operator*(Fixed const & rhs) const
 {
-	return (Fixed(this->_fixed_point * rhs.getRawBits()));
+	Fixed	res;
+
+	res.setRawBits(this->_fixed_point * rhs.getRawBits() >> this->_fract);
+	return (res);
 }
 
 Fixed	Fixed::operator/(Fixed const & rhs) const
 {
-	return (Fixed(this->_fixed_point / rhs.getRawBits()));
+	Fixed	res;
+
+	res.setRawBits((this->_fixed_point * (1 << this->_fract)) / rhs.getRawBits());
+	return (res);
 }
 
 const Fixed&	Fixed::operator++(void)
 {
 	this->_fixed_point++;
-	return (this);
+	return (*this);
+}
+
+const Fixed	Fixed::operator++(int)
+{
+	Fixed*	tmp = this;
+	tmp->_fixed_point++;
+	return (*this);
+}
+
+const Fixed&	Fixed::operator--(void)
+{
+	this->_fixed_point--;
+	return (*this);
+}
+
+const Fixed	Fixed::operator--(int)
+{
+	Fixed*	tmp = this;
+	tmp->_fixed_point--;
+	return (*this);
 }
 
 int	Fixed::getRawBits(void) const
