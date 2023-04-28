@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 14:28:31 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/28 11:04:54 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/28 15:46:03 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	Bureaucrat::decreaseGrade(void)
 		this->_grade++;
 }
 
-void	Bureaucrat::signForm(Form& f)
+void	Bureaucrat::signForm(AForm& f)
 {
 	if (f.getIsSigned() == false)
 	{

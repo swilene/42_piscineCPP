@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:47 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/27 17:09:53 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/04/28 11:06:44 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 int	main()
 {
-	std::cout << "Creating a Bureaucrat instance with a grade of 160:" << std::endl;
+	std::cout << "Creating a Form instance with a gradeToSign of 152 and a gradeToExecute of 14:" << std::endl;
 	try
 	{
-		Bureaucrat	jim("Jim", 160);
+		Form	form1("Form1", 152, 14);
 	}
 	catch (std::exception &e)
 	{
@@ -27,10 +27,10 @@ int	main()
 
 	std::cout << std::endl;
 
-	std::cout << "Creating a Bureaucrat instance with a grade of 0:" << std::endl;
+	std::cout << "Creating a Form instance with a gradeToSign of 16 and a gradeToExecute of 0:" << std::endl;
 	try
 	{
-		Bureaucrat	joe("Joe", 0);
+		Form	form2("Form2", 16, 0);
 	}
 	catch (std::exception &e)
 	{
@@ -39,39 +39,52 @@ int	main()
 
 	std::cout << std::endl;
 
-	std::cout << "Creating a Bureaucrat instance with a grade of 149:" << std::endl;
-	Bureaucrat	jack("Jack", 149);
+	std::cout << "Creating a Form instance with a gradeToSign of 23 and a gradeToExecute of 137:" << std::endl;
+	Form	form3("Form3", 23, 137);
+	std::cout << form3 << std::endl;
+	std::cout << "Creating a Form instance with a gradeToSign of 34 and a gradeToExecute of 56:" << std::endl;
+	Form	form4("Form4", 38, 56);
+	std::cout << form3 << std::endl;
+	std::cout << "Creating a Bureaucrat instance with a grade of 14:" << std::endl;
+	Bureaucrat	jack("Jack", 14);
 	std::cout << jack;
-	std::cout << "Decreasing Jack's grade:" << std::endl;
-	jack.decreaseGrade();
-	std::cout << jack;
-	std::cout << "Decreasing Jack's grade:" << std::endl;
-	try
-	{
-		jack.decreaseGrade();
-	}
-	catch (std::exception &e)
-	{
-		std::cout << e.what() << std::endl;
-	}
+	std::cout << "Creating a Bureaucrat instance with a grade of 38:" << std::endl;
+	Bureaucrat	joe("Joe", 38);
+	std::cout << joe;
 
 	std::cout << std::endl;
 
-	std::cout << "Creating a Bureaucrat instance with a grade of 2:" << std::endl;
-	Bureaucrat	james("James", 2);
-	std::cout << james;
-	std::cout << "Increasing James' grade:" << std::endl;
-	james.increaseGrade();
-	std::cout << james;
-	std::cout << "Increasing James' grade:" << std::endl;
+	jack.signForm(form3);
+	joe.signForm(form4);
+
+	std::cout << std::endl;
+
+	std::cout << "Jack try to sign Form3:" << std::endl;
 	try
 	{
-		james.increaseGrade();
+		form3.beSigned(jack);
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
+	jack.signForm(form3);
+
+	std::cout << std::endl;
+
+	std::cout << "Decreasing Joe's grade:" << std::endl;
+	joe.decreaseGrade();
+	std::cout << joe;
+	std::cout << "Joe try to sign Form4:" << std::endl;
+	try
+	{
+		form4.beSigned(joe);
+	}
+	catch (std::exception &e)
+	{
+		std::cout << e.what() << std::endl;
+	}
+	joe.signForm(form4);
 
 	std::cout << std::endl;
 
