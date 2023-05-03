@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 16:05:37 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/28 15:54:15 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/03 15:42:18 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,6 +75,13 @@ bool	AForm::getIsSigned(void) const
 	return (this->_isSigned);
 }
 
+void	AForm::setIsSigned(void)
+{
+	this->_isSigned = true;
+	
+	return ;
+}
+
 int	AForm::getGradeToSign(void) const
 {
 	return (this->_gradeToSign);
@@ -93,6 +100,11 @@ const char*	AForm::GradeTooHighException::what() const throw()
 const char*	AForm::GradeTooLowException::what() const throw()
 {
 	return ("The grade is too low");
+}
+
+const char*	AForm::FormNotSigned::what() const throw()
+{
+	return ("The form has not been signed yet.");
 }
 
 std::ostream & operator<<(std::ostream & o, AForm const & rhs)

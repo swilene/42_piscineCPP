@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
+/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/28 15:42:58 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/03 17:25:50 by saguesse         ###   ########.fr       */
+/*   Created: 2023/05/03 12:53:51 by saguesse          #+#    #+#             */
+/*   Updated: 2023/05/03 17:34:08 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SHRUBBERYCREATIONFORM_HPP
-# define SHRUBBERYCREATIONFORM_HPP
+#ifndef ROBOTOMYREQUESTFORM_HPP
+# define ROBOTOMYREQUESTFORM_HPP
 
-#include "Form.hpp"
+# include "Form.hpp"
 
-class	ShrubberyCreationForm : public AForm
+class	RobotomyRequestForm : public AForm
 {
 	public:
-		ShrubberyCreationForm(void); //default constructor
-		ShrubberyCreationForm(std::string target);
-		ShrubberyCreationForm(ShrubberyCreationForm const & src); //copy constructor
-		ShrubberyCreationForm & operator=(ShrubberyCreationForm const & rhs); //copy assignment operator
-		virtual ~ShrubberyCreationForm(void); //destructor
+		RobotomyRequestForm(void); //default constructor
+		RobotomyRequestForm(std::string target);
+		RobotomyRequestForm(RobotomyRequestForm const & src); //copy constructor
+		RobotomyRequestForm & operator=(RobotomyRequestForm const & rhs); //copy assignment operator
+		virtual ~RobotomyRequestForm(void); //destructor
 
 		std::string		getTarget(void) const;
 
-		virtual void   	beSigned(Bureaucrat const &bureaucrat);
+		virtual void    beSigned(Bureaucrat const &bureaucrat);
 		virtual void	execute(Bureaucrat const & executor) const;
 
 	private:

@@ -6,7 +6,7 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/28 15:42:50 by saguesse         ###   ########.fr        #
+#    Updated: 2023/05/03 15:10:48 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,15 @@ RM = rm -f
 SRC_FILES = main.cpp \
 			Bureaucrat.cpp \
 			Form.cpp \
-			ShrubberyCreationForm.cpp
+			ShrubberyCreationForm.cpp \
+			RobotomyRequestForm.cpp \
+			PresidentialPardonForm.cpp
 
 INCLUDE_FILES = Bureaucrat.hpp \
 				Form.hpp \
-				ShrubberyCreationForm.hpp
+				ShrubberyCreationForm.hpp \
+				RobotomyRequestForm.hpp \
+				PresidentialPardonForm.hpp
 
 OBJ = $(SRC_FILES:.cpp=.o)
 
