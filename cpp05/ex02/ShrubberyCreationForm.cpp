@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 15:43:14 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/03 17:27:21 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/04 19:56:44 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,21 +57,4 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 std::string ShrubberyCreationForm::getTarget(void) const
 {
 	return (this->_target);
-}
-
-void	ShrubberyCreationForm::beSigned(Bureaucrat const &bureaucrat)
-{
-	if (bureaucrat.getGrade() > this->getGradeToSign())
-		throw AForm::GradeTooLowException();
-	this->setIsSigned();
-}
-
-void    ShrubberyCreationForm::execute(Bureaucrat const & executor) const
-{
-	if (!this->getIsSigned())
-		throw AForm::FormNotSigned();
-	if (executor.getGrade() > this->getGradeToExecute())
-		throw AForm::GradeTooLowException();
-	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox."
-		<< std::endl;
 }

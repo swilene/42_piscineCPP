@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:54:24 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/03 15:32:59 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/04 20:26:22 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,7 @@ class	PresidentialPardonForm : public AForm
 
 		std::string	getTarget(void) const;
 
-		virtual void    beSigned(Bureaucrat const &bureaucrat);
-		virtual void	execute(Bureaucrat const & executor) const;
+		virtual void	action(void) const;
 
 	private:
 		std::string	_target;

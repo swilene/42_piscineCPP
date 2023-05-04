@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:47 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/03 18:01:56 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/04 20:29:21 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@
 
 int	main()
 {
-	const AForm*	s = new ShrubberyCreationForm("garden");
-	const AForm*	r = new RobotomyRequestForm("robot");
-	const AForm*	p = new PresidentialPardonForm("Jim");
-	Bureaucrat		james("James", 1);
+	//AForm*	s = new ShrubberyCreationForm("garden");
+	//AForm*	r = new RobotomyRequestForm("robot");
+	AForm*	p = new PresidentialPardonForm("Jim");
+	Bureaucrat		james("James", 6);
 
 	std::cout << std::endl;
 
@@ -33,8 +33,8 @@ int	main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-	s->beSigned(james);
-	r->beSigned(james);
+	//s->beSigned(james);
+	//r->beSigned(james);
 	p->beSigned(james);
 	try
 	{
@@ -44,8 +44,11 @@ int	main()
 	{
 		std::cout << e.what() << std::endl;
 	}
-	delete s;
-	delete r;
+
+	std::cout << std::endl;
+
+	//delete s;
+	//delete r;
 	delete p;
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 15:42:58 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/03 17:25:50 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/04 19:56:32 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,6 @@ class	ShrubberyCreationForm : public AForm
 		virtual ~ShrubberyCreationForm(void); //destructor
 
 		std::string		getTarget(void) const;
-
-		virtual void   	beSigned(Bureaucrat const &bureaucrat);
-		virtual void	execute(Bureaucrat const & executor) const;
 
 	private:
 		std::string	_target;

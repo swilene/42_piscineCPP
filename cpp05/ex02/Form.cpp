@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 16:05:37 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/03 15:42:18 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/04 20:24:32 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,13 +75,6 @@ bool	AForm::getIsSigned(void) const
 	return (this->_isSigned);
 }
 
-void	AForm::setIsSigned(void)
-{
-	this->_isSigned = true;
-	
-	return ;
-}
-
 int	AForm::getGradeToSign(void) const
 {
 	return (this->_gradeToSign);
@@ -90,6 +83,22 @@ int	AForm::getGradeToSign(void) const
 int	AForm::getGradeToExecute(void) const
 {
 	return (this->_gradeToExecute);
+}
+
+void	AForm::beSigned(Bureaucrat const &bureaucrat)
+{
+	if (bureaucrat.getGrade() > this->_gradeToSign)
+		throw AForm::GradeTooLowException();
+	this->_isSigned = true;
+}
+
+void	AForm::execute(Bureaucrat const & executor) const
+{
+	if (executor.getGrade() > this->_gradeToExecute)
+		throw AForm::GradeTooLowException();
+	if (!this->_isSigned)
+		throw AForm::FormNotSigned();
+	this->action();
 }
 
 const char*	AForm::GradeTooHighException::what() const throw()

@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:53:59 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/03 17:31:25 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/04 20:46:02 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,19 +59,8 @@ std::string	RobotomyRequestForm::getTarget(void) const
 	return (this->_target);
 }
 
-void	RobotomyRequestForm::beSigned(Bureaucrat const &bureaucrat)
+void	RobotomyRequestForm::action(void) const
 {
-	if (bureaucrat.getGrade() > this->getGradeToSign())
-		throw AForm::GradeTooLowException();
-	this->setIsSigned();
-}
-
-void	RobotomyRequestForm::execute(Bureaucrat const & executor) const
-{
-	if (!this->getIsSigned())
-		throw AForm::FormNotSigned();
-	if (executor.getGrade() > this->getGradeToExecute())
-		throw AForm::GradeTooLowException();
-	std::cout << this->getTarget() << " has been pardoned by Zaphod Beeblebrox."
-		<< std::endl;
+	std::cout << "* drilling noises  *" << std::endl;
+	//random 50%
 }
