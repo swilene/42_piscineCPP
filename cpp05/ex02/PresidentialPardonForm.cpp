@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:54:32 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/04 20:26:30 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/08 11:43:10 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ PresidentialPardonForm::PresidentialPardonForm(void)
 }
 
 PresidentialPardonForm::PresidentialPardonForm(std::string target)
-	: AForm("Presidential Form", 25, 5)
+	: AForm("Presidential Form", 25, 5), _target(target)
 {
 	std::cout << "PresidentialPardonForm Parametric constructor called" << std::endl;
-	this->_target = target;
 
 	return ;
 }

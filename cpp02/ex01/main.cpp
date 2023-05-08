@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/18 18:08:34 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/25 15:01:06 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/08 11:12:30 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	main(void)
 	std::cout << "b is " << b << std::endl;
 	std::cout << "c is " << c << std::endl;
 	std::cout << "d is " << d << std::endl;
+	
+	std::cout << std::endl;
 	
 	std::cout << "a is " << a.toInt() << " as integer" << std::endl;
 	std::cout << "b is " << b.toInt() << " as integer" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:36:27 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/21 19:04:50 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:08:14 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Animal::Animal(void)
 
 Animal::Animal(std::string type) : _type(type)
 {
-	std::cout << "Animal Parametric constructor called" << std::endl;
+	std::cout << "Animal Parametric Type constructor called" << std::endl;
 
 	return ;
 }

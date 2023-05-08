@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:44:12 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/21 12:12:40 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/08 15:24:18 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ ScavTrap::ScavTrap(void) : ClapTrap()
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "Default name ScavTrap " << name << " constructor called" << std::endl;
+	std::cout << "Parametric Name ScavTrap " << name << " constructor called" << std::endl;
 
 	this->_hitPoints = 100;
 	this->_energyPoints = 50;
@@ -71,6 +71,6 @@ void	ScavTrap::attack(const std::string& target)
 
 void	ScavTrap::guardGate(void)
 {
-	std::cout << "ScavTrap " << this->_name << " entered gate keeper mode."
+	std::cout << "ScavTrap " << this->_name << " entered gate keeper mode!"
 		<< std::endl;
 }

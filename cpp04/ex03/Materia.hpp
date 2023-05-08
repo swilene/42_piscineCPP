@@ -6,12 +6,15 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 18:00:27 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/25 14:37:20 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/08 17:12:45 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MATERIA_HPP
 # define MATERIA_HPP
+
+# include <string>
+# include <iostream>
 
 class	AMateria
 {

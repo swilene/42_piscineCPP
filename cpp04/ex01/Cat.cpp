@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:45:16 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/24 16:51:15 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:21:06 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Cat::Cat(void) : Animal()
 
 Cat::Cat(std::string type) : Animal(type)
 {
-	std::cout << "Cat Parametric constructor called" << std::endl;
+	std::cout << "Cat Parametric Type constructor called" << std::endl;
 	_brain = new Brain;
 }
 

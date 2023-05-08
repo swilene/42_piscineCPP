@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:42:21 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/24 16:51:43 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:20:54 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ Dog::Dog(void) : Animal()
 
 Dog::Dog(std::string type) : Animal(type)
 {
-	std::cout << "Dog Parametric constructor called" << std::endl;
+	std::cout << "Dog Parametric Type constructor called" << std::endl;
 	_brain = new Brain;
 
 	return ;

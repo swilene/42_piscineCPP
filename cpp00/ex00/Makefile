@@ -6,12 +6,12 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/11 12:34:06 by saguesse         ###   ########.fr        #
+#    Updated: 2023/05/08 18:02:03 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
-CXX = g++
+CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 RM = rm -f
 

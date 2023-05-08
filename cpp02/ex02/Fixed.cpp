@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:18:32 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/26 11:16:57 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/08 15:01:43 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,7 +112,7 @@ Fixed	Fixed::operator*(Fixed const & rhs) const
 {
 	Fixed	res;
 
-	res.setRawBits(this->_fixed_point * rhs.getRawBits() >> this->_fract);
+	res.setRawBits((this->_fixed_point * rhs.getRawBits()) / (1 << this->_fract));
 	return (res);
 }
 
@@ -132,9 +132,9 @@ const Fixed&	Fixed::operator++(void)
 
 const Fixed	Fixed::operator++(int)
 {
-	Fixed*	tmp = this;
-	tmp->_fixed_point++;
-	return (*this);
+	Fixed	tmp = *this;
+	this->_fixed_point++;
+	return (tmp);
 }
 
 const Fixed&	Fixed::operator--(void)
@@ -145,9 +145,9 @@ const Fixed&	Fixed::operator--(void)
 
 const Fixed	Fixed::operator--(int)
 {
-	Fixed*	tmp = this;
-	tmp->_fixed_point--;
-	return (*this);
+	Fixed	tmp = *this;
+	this->_fixed_point--;
+	return (tmp);
 }
 
 int	Fixed::getRawBits(void) const

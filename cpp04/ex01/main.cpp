@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:25:31 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/24 17:00:59 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:38:29 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,22 +34,24 @@ int	main(void)
 
 	std::cout << std::endl;
 
-	Cat	myrtille = Cat();
-	myrtille.getBrain().setIdeas("Aaa", 0);
-	myrtille.getBrain().setIdeas("Bbb", 1);
-	std::cout << "First idea: " << myrtille.getBrain().getIdeas(0) << std::endl;
-	std::cout << "Second idea: " << myrtille.getBrain().getIdeas(1) << std::endl;
+	Cat	garfield = Cat();
+	garfield.getBrain().setIdeas("Aaa", 0);
+	garfield.getBrain().setIdeas("Bbb", 1);
+	std::cout << "Garfield's first idea: " << garfield.getBrain().getIdeas(0) << std::endl;
+	std::cout << "Garfield's second idea: " << garfield.getBrain().getIdeas(1) << std::endl;
 
 	std::cout << std::endl;
 
-	Cat	grelotte = myrtille;
-	std::cout << "First idea: " << grelotte.getBrain().getIdeas(0) << std::endl;
-	std::cout << "Second idea: " << grelotte.getBrain().getIdeas(1) << std::endl;
-	grelotte.getBrain().setIdeas("Ccc", 0);
-	grelotte.getBrain().setIdeas("Ddd", 1);
-	std::cout << "New ideas: " << std::endl;
-	std::cout << "First idea: " << grelotte.getBrain().getIdeas(0) << std::endl;
-	std::cout << "Second idea: " << grelotte.getBrain().getIdeas(1) << std::endl;
+	Cat	felix = garfield;
+	std::cout << "Felix's first idea: " << felix.getBrain().getIdeas(0) << std::endl;
+	std::cout << "Felix's second idea: " << felix.getBrain().getIdeas(1) << std::endl;
+	felix.getBrain().setIdeas("Ccc", 0);
+	felix.getBrain().setIdeas("Ddd", 1);
+	std::cout << "Felix's new ideas: " << std::endl;
+	std::cout << "Felix's first idea: " << felix.getBrain().getIdeas(0) << std::endl;
+	std::cout << "Felix's second idea: " << felix.getBrain().getIdeas(1) << std::endl;
+	std::cout << "Garfield's first idea: " << garfield.getBrain().getIdeas(0) << std::endl;
+	std::cout << "Garfield's second idea: " << garfield.getBrain().getIdeas(1) << std::endl;
 	std::cout << std::endl;
 
 	return (0);

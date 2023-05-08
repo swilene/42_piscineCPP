@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:25:31 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/24 11:04:12 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/08 16:14:11 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	main(void)
 	const WrongAnimal*	wrongAnimal = new WrongAnimal;
 	const WrongAnimal*		wrongCat = new WrongCat("Wrong Cat");
 
-	std::cout << "\n" << std::endl;
+	std::cout << std::endl;
 
 	std::cout << dog->getType() << ": ";
 	dog->makeSound();
@@ -34,7 +34,7 @@ int	main(void)
 	wrongCat->makeSound();
 	wrongAnimal->makeSound();
 
-	std::cout << "\n" << std::endl;
+	std::cout << std::endl;
 
 	delete animal;
 	delete dog;

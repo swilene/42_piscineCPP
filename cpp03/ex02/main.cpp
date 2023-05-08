@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 21:07:45 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/21 12:26:30 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/08 15:28:44 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ int	main()
 	ClapTrap	riri("Riri");
 	ScavTrap	fifi("Fifi");
 	FragTrap	loulou("Loulou");
-	FragTrap	jim(loulou);
 
-	std::cout << "\n";
+	std::cout << std::endl;
 
 	riri.attack("Gripsou");
 	riri.printPoints();
@@ -30,7 +29,7 @@ int	main()
 	riri.beRepaired(3);
 	riri.printPoints();
 
-	std::cout << "\n";
+	std::cout << std::endl;
 
 	fifi.attack("Rapetou");
 	fifi.printPoints();
@@ -40,7 +39,7 @@ int	main()
 	fifi.printPoints();
 	fifi.guardGate();
 
-	std::cout << "\n";
+	std::cout << std::endl;
 
 	loulou.attack("Miss Tick");
 	loulou.printPoints();
@@ -50,7 +49,7 @@ int	main()
 	loulou.printPoints();
 	loulou.highFivesGuys();
 
-	std::cout << "\n";
+	std::cout << std::endl;
 
 	return (0);
 }

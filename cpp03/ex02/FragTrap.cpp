@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 11:42:10 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/21 12:34:37 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/08 15:26:02 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ FragTrap::FragTrap(void) : ClapTrap()
 
 FragTrap::FragTrap(std::string name) : ClapTrap(name)
 {
-	std::cout << "Default name FragTrap "<< name << " constructor called" << std::endl;
+	std::cout << "Parametric Name FragTrap "<< name << " constructor called" << std::endl;
 
 	this->_hitPoints = 100;
 	this->_energyPoints = 100;

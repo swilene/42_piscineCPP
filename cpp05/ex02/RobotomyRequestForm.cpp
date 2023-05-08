@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:53:59 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/04 20:46:02 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/08 11:43:26 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,10 +20,9 @@ RobotomyRequestForm::RobotomyRequestForm(void) : AForm()
 }
 
 RobotomyRequestForm::RobotomyRequestForm(std::string target)
-	: AForm("Robotomy Form", 72, 45)
+	: AForm("Robotomy Form", 72, 45), _target(target)
 {
 	std::cout << "RobotomyRequestForm Parametric constructor called" << std::endl;
-	this->_target = target;
 
 	return ;
 }

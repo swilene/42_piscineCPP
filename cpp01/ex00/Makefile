@@ -6,12 +6,12 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/13 16:03:30 by saguesse         ###   ########.fr        #
+#    Updated: 2023/05/08 18:09:00 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = zombie
-CXX = g++
+CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 RM = rm -f
 

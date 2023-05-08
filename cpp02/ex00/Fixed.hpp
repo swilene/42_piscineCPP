@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:15:04 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/19 00:03:39 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/08 11:23:00 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,8 @@ class	Fixed
 	public:
 		Fixed(void);
 		Fixed(Fixed const & src);
-		~Fixed(void);
-
 		Fixed & operator=(Fixed const & rhs);
+		~Fixed(void);
 
 		int		getRawBits(void) const;
 		void	setRawBits(int const raw);
