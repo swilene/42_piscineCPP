@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:15:04 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/08 11:22:43 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/09 12:00:26 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@ class	Fixed
 {
 	public:
 		Fixed(void);
-		Fixed(int const n);
-		Fixed(float const n);
+		Fixed(int const i);
+		Fixed(float const f);
 		Fixed(Fixed const & src);
 		Fixed & operator=(Fixed const & rhs);
 		~Fixed(void);

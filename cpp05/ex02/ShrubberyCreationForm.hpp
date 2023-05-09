@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 15:42:58 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/04 19:56:32 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/09 11:43:00 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define SHRUBBERYCREATIONFORM_HPP
 
 #include "Form.hpp"
+
+# include <iostream>
+# include <string>
 
 class	ShrubberyCreationForm : public AForm
 {

@@ -6,12 +6,15 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 10:10:51 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/24 11:08:46 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/09 11:37:32 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef WRONGCAT_HPP
 # define WRONGCAT_HPP
+
+# include <iostream>
+# include <string>
 
 # include "WrongAnimal.hpp"
 

@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/24 18:00:27 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/08 17:12:45 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/09 11:55:09 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class	AMateria
 		AMateria(std::string const & type);
 		AMateria(AMateria const & src); //copy constructor
 		AMateria & operator=(AMateria const & rhs); //copy assignment operator
-		~AMateria(void); //destructor
+		virtual ~AMateria(void); //destructor
 
 		std::string const & getType(void) const; //Returns the materia type
 		virtual AMateria* clone(void) const = 0;

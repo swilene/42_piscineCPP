@@ -6,27 +6,27 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/05/09 11:01:52 by saguesse         ###   ########.fr        #
+#    Updated: 2023/05/09 11:22:46 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = animals
+NAME = materia
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 RM = rm -f
 
-HEADER_FILES = Animal.hpp \
-			   Dog.hpp \
-			   Cat.hpp \
-			   Brain.hpp
+HEADER_FILES = Materia.hpp \
+			   Cure.hpp \
+			   Ice.hpp \
+			   Character.hpp \
 
 SRCS_FILES = main.cpp \
-			 Animal.cpp \
-			 Dog.cpp \
-			 Cat.cpp \
-			 Brain.cpp
+			 Materia.cpp \
+			 Cure.cpp \
+			 Ice.cpp \
+			 Character.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
 

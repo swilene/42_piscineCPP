@@ -6,15 +6,15 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 17:53:50 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/24 10:05:31 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/09 11:35:46 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ANIMAL_HPP
 # define ANIMAL_HPP
 
-#include <iostream>
-#include <string>
+# include <iostream>
+# include <string>
 
 class	Animal
 {

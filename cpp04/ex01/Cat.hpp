@@ -6,12 +6,15 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:44:59 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/24 15:44:25 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/09 11:39:17 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CAT_HPP
 # define CAT_HPP
+
+# include <iostream>
+# include <string>
 
 # include "Animal.hpp"
 # include "Brain.hpp"

@@ -6,14 +6,17 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:44:59 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/24 10:07:52 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/09 11:36:43 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Animal.hpp"
-
 #ifndef CAT_HPP
 # define CAT_HPP
+
+# include <iostream>
+# include <string>
+
+# include "Animal.hpp"
 
 class	Cat : public Animal
 {

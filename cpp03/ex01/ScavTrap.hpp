@@ -6,14 +6,17 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/20 09:37:18 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/21 12:11:49 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/09 11:33:08 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCAVTRAP_HPP
 # define SCAVTRAP_HPP
 
-#include "ClapTrap.hpp"
+# include <string>
+# include <iostream>
+
+# include "ClapTrap.hpp"
 
 class	ScavTrap : public ClapTrap
 {

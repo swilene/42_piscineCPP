@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:54:24 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/04 20:26:22 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/09 11:43:11 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define PRESIDENTIALPARDONFORM_HPP
 
 # include "Form.hpp"
+
+# include <iostream>
+# include <string>
 
 class	PresidentialPardonForm : public AForm
 {

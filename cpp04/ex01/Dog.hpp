@@ -6,12 +6,15 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 18:41:58 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/24 15:48:48 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/09 11:39:26 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef DOG_HPP
 # define DOG_HPP
+
+# include <iostream>
+# include <string>
 
 # include "Animal.hpp"
 # include "Brain.hpp"

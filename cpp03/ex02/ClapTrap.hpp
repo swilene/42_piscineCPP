@@ -6,15 +6,15 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/19 20:04:37 by saguesse          #+#    #+#             */
-/*   Updated: 2023/04/21 12:10:49 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/09 11:34:19 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CLAPTRAP_HPP
 # define CLAPTRAP_HPP
 
-#include <string>
-#include <iostream>
+# include <string>
+# include <iostream>
 
 class ClapTrap
 {
