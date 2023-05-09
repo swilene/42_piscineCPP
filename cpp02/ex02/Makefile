@@ -6,32 +6,34 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/18 18:11:26 by saguesse         ###   ########.fr        #
+#    Updated: 2023/05/09 10:52:14 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = fixed
-CXX = g++
+
+CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+
 RM = rm -f
 
-SRC_FILES = main.cpp \
-			Fixed.cpp
+HEADER_FILES = Fixed.hpp \
 
-INCLUDE_FILES = Fixed.hpp
+SRCS_FILES = main.cpp \
+			 Fixed.cpp
 
-OBJ = $(SRC_FILES:.cpp=.o)
+OBJS = $(SRCS_FILES:.cpp=.o)
 
-$(NAME): $(OBJ) $(INCLUDE_FILES)
-	$(CXX) $(OBJ) -o $(NAME) $(INCLUDE_FILES)
+%.o : %.cpp $(HEADER_FILES)
+	$(CXX) -c $(CXXFLAGS) $< -o $@
 
-%.o : %.c $(INCLUDE_FILES)
-	$(CXX) $(CXXFLAGS) -c $< -o
+$(NAME): $(OBJS) $(HEADER_FILES)
+	$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)

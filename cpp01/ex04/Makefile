@@ -6,32 +6,34 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/14 11:35:42 by saguesse         ###   ########.fr        #
+#    Updated: 2023/05/09 10:49:08 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = replace
-CXX = g++
+
+CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+
 RM = rm -f
 
-SRC_FILES = main.cpp \
-			Replace.cpp
+HEADER_FILES = Replace.hpp \
 
-INCLUDE_FILES = Replace.hpp
+SRCS_FILES = main.cpp \
+			 Replace.cpp
 
-OBJ = $(SRC_FILES:.cpp=.o)
+OBJS = $(SRCS_FILES:.cpp=.o)
 
-$(NAME): $(OBJ) $(INCLUDE_FILES)
-	$(CXX) $(OBJ) -o $(NAME) $(INCLUDE_FILES)
+%.o : %.cpp $(HEADER_FILES)
+	$(CXX) -c $(CXXFLAGS) $< -o $@
 
-%.o : %.c $(INCLUDE_FILES)
-	$(CXX) $(CXXFLAGS) -c $< -o
+$(NAME): $(OBJS) $(HEADER_FILES)
+	$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)

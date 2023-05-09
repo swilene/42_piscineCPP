@@ -6,34 +6,36 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/20 16:07:28 by saguesse         ###   ########.fr        #
+#    Updated: 2023/05/09 10:55:50 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = clapTrap
-CXX = g++
+
+CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+
 RM = rm -f
 
-SRC_FILES = main.cpp \
-			ClapTrap.cpp \
-			ScavTrap.cpp
+HEADER_FILES = ClapTrap.hpp \
+			   ScavTrap.hpp
 
-INCLUDE_FILES = ClapTrap.hpp \
-				ScavTrap.hpp
+SRCS_FILES = main.cpp \
+			 ClapTrap.cpp \
+			 ScavTrap.cpp
 
-OBJ = $(SRC_FILES:.cpp=.o)
+OBJS = $(SRCS_FILES:.cpp=.o)
 
-$(NAME): $(OBJ) $(INCLUDE_FILES)
-	$(CXX) $(OBJ) -o $(NAME) $(INCLUDE_FILES)
+%.o : %.cpp $(HEADER_FILES)
+	$(CXX) -c $(CXXFLAGS) $< -o $@
 
-%.o : %.c $(INCLUDE_FILES)
-	$(CXX) $(CXXFLAGS) -c $< -o
+$(NAME): $(OBJS) $(HEADER_FILES)
+	$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)

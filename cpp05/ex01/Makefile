@@ -6,34 +6,36 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/27 16:05:13 by saguesse         ###   ########.fr        #
+#    Updated: 2023/05/09 11:07:13 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = bureaucrat
-CXX = g++
+
+CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+
 RM = rm -f
 
-SRC_FILES = main.cpp \
-			Bureaucrat.cpp \
-			Form.cpp
+HEADER_FILES = Bureaucrat.hpp \
+			   Form.hpp \
 
-INCLUDE_FILES = Bureaucrat.hpp \
-				Form.hpp
+SRCS_FILES = main.cpp \
+			 Bureaucrat.cpp \
+			 Form.cpp \
 
-OBJ = $(SRC_FILES:.cpp=.o)
+OBJS = $(SRCS_FILES:.cpp=.o)
 
-$(NAME): $(OBJ) $(INCLUDE_FILES)
-	$(CXX) $(OBJ) -o $(NAME) $(INCLUDE_FILES)
+%.o : %.cpp $(HEADER_FILES)
+	$(CXX) -c $(CXXFLAGS) $< -o $@
 
-%.o : %.c $(INCLUDE_FILES)
-	$(CXX) $(CXXFLAGS) -c $< -o
+$(NAME): $(OBJS) $(HEADER_FILES)
+	$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)

@@ -6,38 +6,40 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/24 13:34:55 by saguesse         ###   ########.fr        #
+#    Updated: 2023/05/09 11:01:52 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = animals
-CXX = g++
+
+CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+
 RM = rm -f
 
-SRC_FILES = main.cpp \
-			Animal.cpp \
-			Dog.cpp \
-			Cat.cpp \
-			Brain.cpp
+HEADER_FILES = Animal.hpp \
+			   Dog.hpp \
+			   Cat.hpp \
+			   Brain.hpp
 
-INCLUDE_FILES = Animal.hpp \
-				Dog.hpp \
-				Cat.hpp \
-				Brain.hpp
+SRCS_FILES = main.cpp \
+			 Animal.cpp \
+			 Dog.cpp \
+			 Cat.cpp \
+			 Brain.cpp
 
-OBJ = $(SRC_FILES:.cpp=.o)
+OBJS = $(SRCS_FILES:.cpp=.o)
 
-$(NAME): $(OBJ) $(INCLUDE_FILES)
-	$(CXX) $(OBJ) -o $(NAME) $(INCLUDE_FILES)
+%.o : %.cpp $(HEADER_FILES)
+	$(CXX) -c $(CXXFLAGS) $< -o $@
 
-%.o : %.c $(INCLUDE_FILES)
-	$(CXX) $(CXXFLAGS) -c $< -o
+$(NAME): $(OBJS) $(HEADER_FILES)
+	$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)

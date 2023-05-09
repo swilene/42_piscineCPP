@@ -6,29 +6,31 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/04/13 11:40:35 by saguesse         ###   ########.fr        #
+#    Updated: 2023/05/09 10:45:34 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = brain
-CXX = g++
+
+CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
+
 RM = rm -f
 
-SRC_FILES = main.cpp \
+SRCS_FILES = main.cpp \
 
-OBJ = $(SRC_FILES:.cpp=.o)
+OBJS = $(SRCS_FILES:.cpp=.o)
 
-$(NAME): $(OBJ)
-	$(CXX) $(OBJ) -o $(NAME)
+%.o : %.cpp
+	$(CXX) -c $(CXXFLAGS) $< -o $@
 
-%.o : %.c
-	$(CXX) $(CXXFLAGS) -c $< -o
+$(NAME): $(OBJS)
+	$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
 
 all: $(NAME)
 
 clean:
-	$(RM) $(OBJ)
+	$(RM) $(OBJS)
 
 fclean: clean
 	$(RM) $(NAME)
