@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:53:51 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/09 11:43:21 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/10 15:16:03 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class	RobotomyRequestForm : public AForm
 		virtual ~RobotomyRequestForm(void); //destructor
 
 		std::string		getTarget(void) const;
-
 		virtual void	action(void) const;
 
 	private:

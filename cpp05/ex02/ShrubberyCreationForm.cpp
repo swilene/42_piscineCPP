@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 15:43:14 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/08 11:42:44 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/10 17:05:08 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,4 +56,34 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 std::string ShrubberyCreationForm::getTarget(void) const
 {
 	return (this->_target);
+}
+
+void	ShrubberyCreationForm::action(void) const
+{
+	std::string filename = this->_target + "_shrubbery";
+	char	file[filename.length() + 1];
+	strcpy(file, filename.c_str());
+	std::ofstream	outfile(file);
+	if (!outfile)
+	{
+		std::cout << "Error: can't open " << file << std::endl;
+		return ;
+	}
+	outfile << "              * *                         * *           " << std::endl;
+	outfile << "           *    *  *                   *    *  *        " << std::endl;
+	outfile << "      *  *    *     *  *          *  *    *     *  *    " << std::endl;
+	outfile << "     *     *    *  *    *        *     *    *  *    *   " << std::endl;
+	outfile << " * *   *    *    *    *   *  * *   *    *    *    *   * " << std::endl;
+	outfile << " *     *  *    * * .#  *   * *     *  *    * * .#  *   *" << std::endl;
+	outfile << " *   *     * #.  .# *   *    *   *     * #.  .# *   *   " << std::endl;
+	outfile << "  *    \"#.  #: #\" * *   *   *    \"#.  #: #\" * *   * " << std::endl;
+	outfile << " *   * *\"#. ##\"      *     *   * *\"#. ##\"      *    " << std::endl;
+	outfile << "   *      \"###                *      \"###             " << std::endl;
+	outfile << "            \"##                        \"##            " << std::endl;
+	outfile << "              ##.                         ##.           " << std::endl;
+	outfile << "              .##:                        .##:          " << std::endl;
+	outfile << "              :###                        :###          " << std::endl;
+	outfile << "              ;###                        ;###          " << std::endl;
+	outfile << "            ,####.                      ,####.          " << std::endl;
+	outfile.close();
 }

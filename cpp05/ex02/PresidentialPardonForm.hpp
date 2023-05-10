@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 12:54:24 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/09 11:43:11 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/10 10:52:02 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ class	PresidentialPardonForm : public AForm
 		virtual ~PresidentialPardonForm(void); //destructor
 
 		std::string	getTarget(void) const;
-
 		virtual void	action(void) const;
 
 	private:

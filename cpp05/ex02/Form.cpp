@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 16:05:37 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/04 20:24:32 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/10 16:17:31 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,9 @@ AForm::AForm(std::string name, int gradeToSign, int gradeToExecute)
 {
 	std::cout << "AForm " << name << " Parametric constructor called" << std::endl;
 
-	if (gradeToSign < 1)
+	if (gradeToSign < 1 || gradeToExecute < 1)
 		throw AForm::GradeTooHighException();
-	else if (gradeToSign > 150)
-		throw AForm::GradeTooLowException();
-	if (gradeToExecute < 1)
-		throw AForm::GradeTooHighException();
-	else if (gradeToExecute > 150)
+	else if (gradeToSign > 150 || gradeToExecute > 150)
 		throw AForm::GradeTooLowException();
 
 	this->_isSigned = false;

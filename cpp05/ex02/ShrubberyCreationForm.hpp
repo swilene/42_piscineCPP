@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 15:42:58 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/09 11:43:00 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/10 12:27:52 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 #include "Form.hpp"
 
 # include <iostream>
+# include <fstream>
 # include <string>
+# include <string.h>
 
 class	ShrubberyCreationForm : public AForm
 {
@@ -28,6 +30,7 @@ class	ShrubberyCreationForm : public AForm
 		virtual ~ShrubberyCreationForm(void); //destructor
 
 		std::string		getTarget(void) const;
+		virtual void	action(void) const;
 
 	private:
 		std::string	_target;
