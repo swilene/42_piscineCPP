@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.hpp                            :+:      :+:    :+:   */
+/*   ShrubberyCreationForm.hpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 12:53:51 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/11 12:08:07 by saguesse         ###   ########.fr       */
+/*   Created: 2023/04/28 15:42:58 by saguesse          #+#    #+#             */
+/*   Updated: 2023/05/11 16:30:35 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ROBOTOMYREQUESTFORM_HPP
-# define ROBOTOMYREQUESTFORM_HPP
+#ifndef SHRUBBERYCREATIONFORM_HPP
+# define SHRUBBERYCREATIONFORM_HPP
 
-# include "Form.hpp"
+#include "Form.hpp"
 
 # include <iostream>
+# include <fstream>
 # include <string>
-# include <stdlib.h>
+# include <string.h>
 
-class	RobotomyRequestForm : public AForm
+class	ShrubberyCreationForm : public AForm
 {
 	public:
-		RobotomyRequestForm(void); //default constructor
-		RobotomyRequestForm(std::string target);
-		RobotomyRequestForm(RobotomyRequestForm const & src); //copy constructor
-		RobotomyRequestForm & operator=(RobotomyRequestForm const & rhs); //copy assignment operator
-		virtual ~RobotomyRequestForm(void); //destructor
+		ShrubberyCreationForm(void); //default constructor
+		ShrubberyCreationForm(std::string target);
+		ShrubberyCreationForm(ShrubberyCreationForm const & src); //copy constructor
+		ShrubberyCreationForm & operator=(ShrubberyCreationForm const & rhs); //copy assignment operator
+		virtual ~ShrubberyCreationForm(void); //destructor
 
 		std::string		getTarget(void) const;
 		virtual void	action(void) const;

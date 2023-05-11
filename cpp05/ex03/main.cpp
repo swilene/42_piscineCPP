@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/26 17:56:47 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/11 14:41:29 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/11 18:10:23 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,24 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
 int	main()
 {
-	AForm*	s = new ShrubberyCreationForm("garden");
-	AForm*	r = new RobotomyRequestForm("Your neighbour");
-	AForm*	p = new PresidentialPardonForm("John");
 	Bureaucrat		james("James", 132);
 	Bureaucrat		jim("Jim", 47);
 	Bureaucrat		jack("Jack", 26);
 	Bureaucrat		joe("Joe", 5);
-
+	Intern someRandomIntern;
+	std::cout << std::endl;
+	AForm*	s = someRandomIntern.makeForm("shrubbery creation", "garden");
+	std::cout << std::endl;
+	AForm*	r = someRandomIntern.makeForm("robotomy request", "Your neighbour");
+	std::cout << std::endl;
+	AForm*	p = someRandomIntern.makeForm("presidential pardon", "John");
+	std::cout << std::endl;
+	AForm*	wrongForm;
+	wrongForm = someRandomIntern.makeForm("unknowned form", "Nemo");
 	std::cout << std::endl;
 
 	// *** James -> Shrubbery Creation Form ***
