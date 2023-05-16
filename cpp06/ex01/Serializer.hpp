@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   megaphone.cpp                                      :+:      :+:    :+:   */
+/*   Serializer.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/06 14:40:48 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/15 15:02:50 by saguesse         ###   ########.fr       */
+/*   Created: 2023/05/16 17:21:45 by saguesse          #+#    #+#             */
+/*   Updated: 2023/05/16 17:33:39 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <cstring>
+#ifndef SERIALIZER_HPP
+# define SERIALIZER_HPP
 
-int	main(int argc, char **argv)
+# include <iostream>
+# include <stdint.h>
+
+class	Serializer
 {
-	if (argc == 1)
-		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *" << std::endl;
-	else
-	{
-		for (int i = 1; i < argc; i++)
-		{
-			for (size_t j = 0; j < strlen(argv[i]); j++)
-				std::cout << (char)toupper(argv[i][j]);
-		}
-	std::cout << std::endl;
-	}
-	return 0;
-}
+	public:
+		Serializer(void); //default constructor
+		Serializer(Serializer const & src); //copy constructor
+		Serializer & operator=(Serializer const & rhs); //copy assignment operator
+		~Serializer(void); //destructor
+
+		static uintptr_t serialize(Data* ptr);
+};
+
+#endif

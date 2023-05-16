@@ -6,25 +6,28 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/05/15 12:11:21 by saguesse         ###   ########.fr        #
+#    Updated: 2023/05/16 17:20:57 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
+NAME = scalarConverter
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98
 
 RM = rm -f
 
-SRCS_FILES = megaphone.cpp
+HEADER_FILES = Serializer.hpp \
+
+SRCS_FILES = main.cpp \
+			 Serializer.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
 
-%.o : %.cpp
+%.o : %.cpp $(HEADER_FILES)
 	$(CXX) -c $(CXXFLAGS) $< -o $@
 
-$(NAME): $(OBJS)
+$(NAME): $(OBJS) $(HEADER_FILES)
 	$(CXX) -o $(NAME) $(CXXFLAGS) $(OBJS)
 
 all: $(NAME)

@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/14 14:34:37 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/14 17:33:45 by saguesse         ###   ########.fr       */
+/*   Created: 2023/05/16 09:42:46 by saguesse          #+#    #+#             */
+/*   Updated: 2023/05/16 17:00:08 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,92 +46,127 @@ ScalarConverter::~ScalarConverter(void)
 	return ;
 }
 
-std::string	defineType(std::string s)
+void	ScalarConverter::convert(std::string s)
 {
-	int i = 0;
+	size_t	i = 0;
 
-	if (s == "-inff" || s == "+inff" || s == "inff" || s == "nanf")
-	{
-		std::cout << s << " is a float" << std::endl;
-		return ("float");
-	}
-	else if (s == "-inf" || s == "+inf" || s == "inf" || s == "nan")
-	{
-		std::cout << s << " is a double" << std::endl;
-		return ("double");
-	}
+	if (s == "nan" || s == "-inf" || s == "+inf" || s == "inf")
+		isDouble(s);
+	else if (s == "nanf" || s == "-inff" || s == "+inff" || s == "inff")
+		isFloat(s);
 	else if (s.size() == 1 && !isdigit(s[0]))
-	{
-		std::cout << s << " is a char" << std::endl;
-		return ("char");
-	}
+		isChar(s);
 	else
 	{
 		if (s[0] == '-')
 			i++;
 		do
-				i++;
+			i++;
 		while (isdigit(s[i]));
-
-		if (i == (int)s.size())
-		{
-			std::cout << s << " is an int" << std::endl;
-			return ("int");
-		}
+		if (i == s.size())
+			isInt(s);
 		else if (s[i] == '.')
 		{
 			do
 				i++;
 			while (isdigit(s[i]));
-			if (i == (int)s.size())
-			{
-				std::cout << s << " is a double" << std::endl;
-				return ("double");
-			}
-			else if (s[i] == 'f')
-			{
-				std::cout << s << " is a float" << std::endl;
-				return ("float");
-			}
-			return ("error");
+			if (i == s.size())
+				isDouble(s);
+			else if (s[i] == 'f' && !s[i + 1])
+				isFloat(s);
+			else
+				isError(s);
 		}
-		return ("error");
+		else
+			isError(s);;
 	}
 }
 
-void	ScalarConverter::convert(char* s)
+void	ScalarConverter::isChar(std::string s)
 {
-	char	c = '\0';
-	int		i;
-	//double	d;
-	//float	f;
-	std::string	type = defineType(s);
+	std::cout << s << " is a char" << std::endl;
+	char c = s[0];
+	std::cout << "char: ";
+	if (c < 32 || c > 126)
+		std::cout << "non displayable" << std::endl;
+	else
+		std::cout << c << std::endl;
+	int i = static_cast<int>(c);
+	std::cout << "int: " << i << std::endl;
+	std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
+	std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
+}
 
-	if (type == "error")
+void	ScalarConverter::isInt(std::string s)
+{
+	int i;
+
+	std::cout << "int: ";
+	if (s.size() > 11 || strtol(s.c_str(), NULL, 0) > std::numeric_limits<int>::max()
+			|| strtol(s.c_str(), NULL, 0) < std::numeric_limits<int>::min())
 	{
-		std::cout << "Please, enter a valide input: char, int, double or float"
-			<< std::endl;
+		std::cout << "impossible" << std::endl;
+		std::cout << "char: impossible due to an int overflow" << std::endl;
+		std::cout << "float: impossible due to an int overflow" << std::endl;
+		std::cout << "double: impossible due to an int overflow" << std::endl;
 		return ;
 	}
-	else if (type == "char")
+	else
 	{
-		c = s[0];
-		std::cout << "char: ";
-		if (c < ' ' || c > '~')
-			std::cout << "non displayable" << std::endl;
-		else
-			std::cout << c << std::endl;
+		i = atoi(s.c_str());
+		std::cout << i << std::endl;
 	}
-	else if (type == "int")
-	{
-		std::cout << "int: ";
-		if (strlen(s) > 11 || strtol(s, NULL, 0) < std::numeric_limits<int>::min()
-				|| strtol(s, NULL, 0) > std::numeric_limits<int>::max())
-			std::cout << "impossible" << std::endl;
-		else
-		{
-			i = atoi(s);
-			std::cout << i << std::endl;
-		}
-	}
+	std::cout << "char: ";
+	if (i < 0 || i > 127)
+		std::cout << "impossible" << std::endl;
+	else if (i < 32 || i > 126)
+		std::cout << "non displayable" << std::endl;
+	else 
+		std::cout << static_cast<char>(i) << std::endl;
+	std::cout << "float: " << static_cast<float>(i) << "f" << std::endl;
+	std::cout << "double: " << static_cast<double>(i) << std::endl;
+}
+
+void	ScalarConverter::isFloat(std::string s)
+{
+	float f = atof(s.c_str());
+	std::cout << "float: " << f << "f" << std::endl;
+	std::cout << "char: ";
+	if (f < 0 || f > 127)
+		std::cout << "impossible" << std::endl;
+	else if (f < 32 || f > 126)
+		std::cout << "non displayable" << std::endl;
+	else 
+		std::cout << static_cast<char>(f) << std::endl;
+	std::cout << "int: ";
+	if (f > std::numeric_limits<int>::max() || f < std::numeric_limits<int>::min())
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<int>(f) << std::endl;
+	std::cout << "double: " << static_cast<double>(f) << std::endl;
+}
+
+void	ScalarConverter::isDouble(std::string s)
+{
+	double d = atof(s.c_str());
+	std::cout << "double: " << d << std::endl;
+	std::cout << "char: ";
+	if (d < 0 || d > 127)
+		std::cout << "impossible" << std::endl;
+	else if (d < 32 || d > 126)
+		std::cout << "non displayable" << std::endl;
+	else 
+		std::cout << static_cast<char>(d) << std::endl;
+	std::cout << "int: ";
+	if (d > std::numeric_limits<int>::max() || d < std::numeric_limits<int>::min())
+		std::cout << "impossible" << std::endl;
+	else
+		std::cout << static_cast<int>(d) << std::endl;
+	std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
+}
+
+void	ScalarConverter::isError(std::string s)
+{
+	std::cout << s << " is an error." <<std::endl;
+	std::cout << "Please enter a char, an int, a double or a float"	<< std::endl;
 }

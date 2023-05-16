@@ -5,19 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/12 14:50:55 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/14 17:34:46 by saguesse         ###   ########.fr       */
+/*   Created: 2023/05/16 09:42:33 by saguesse          #+#    #+#             */
+/*   Updated: 2023/05/16 14:44:01 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SCALARCONVERTER_HPP
 # define SCALARCONVERTER_HPP
 
-# include <iostream>
 # include <string>
-# include <cstring>
-# include <limits>
+# include <iostream>
 # include <cstdlib>
+# include <limits>
 
 class	ScalarConverter
 {
@@ -27,7 +26,15 @@ class	ScalarConverter
 		ScalarConverter & operator=(ScalarConverter const & rhs); //copy assignment operator
 		~ScalarConverter(void); //destructor
 
-		static void	convert(char* s);
+		static void	convert(std::string s);
+		static void	isChar(std::string s);
+		static void	isInt(std::string s);
+		static void	isFloat(std::string s);
+		static void	isDouble(std::string s);
+		static void isError(std::string s);
+
+	private:
+		std::string	_type;
 };
 
 #endif
