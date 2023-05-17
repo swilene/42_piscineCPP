@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   A.cpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 17:21:06 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/17 11:03:24 by saguesse         ###   ########.fr       */
+/*   Created: 2023/05/17 11:18:09 by saguesse          #+#    #+#             */
+/*   Updated: 2023/05/17 11:18:20 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
-#include "Data.h"
+#include "A.hpp"
 
-int	main(void)
+A::A(void)
 {
-	Data	ptr;
+	std::cout << "A Default constructor called" << std::endl;
 
-	std::cout << "ptr adress at the beginning: " << &ptr << std::endl;
+	return ;
+}
 
-	Serializer::deserialize(Serializer::serialize(&ptr));
-	ptr.i = 42;
+A::~A(void)
+{
+	std::cout << "A Destructor called" << std::endl;
 
-	std::cout << "ptr adress at the end: " << &ptr << std::endl;
-	std::cout << "Value of i: " << ptr.i << std::endl;
-
-
-	return (0);
+	return ;
 }

@@ -1,30 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   C.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 17:21:06 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/17 11:03:24 by saguesse         ###   ########.fr       */
+/*   Created: 2023/05/17 11:19:49 by saguesse          #+#    #+#             */
+/*   Updated: 2023/05/17 11:24:54 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
-#include "Data.h"
+#ifndef C_HPP
+# define C_HPP
 
-int	main(void)
+# include "Base.hpp"
+
+# include <iostream> 
+
+class	C : public Base
 {
-	Data	ptr;
+	public:
+		C(void); //default constructor
+		C(C const & src); //copy constructor
+		C & operator=(C const & rhs); //copy assignment operator
+		~C(void); //destructor
 
-	std::cout << "ptr adress at the beginning: " << &ptr << std::endl;
+	protected:
+	private:
+};
 
-	Serializer::deserialize(Serializer::serialize(&ptr));
-	ptr.i = 42;
-
-	std::cout << "ptr adress at the end: " << &ptr << std::endl;
-	std::cout << "Value of i: " << ptr.i << std::endl;
-
-
-	return (0);
-}
+#endif

@@ -1,30 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 17:21:06 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/17 11:03:24 by saguesse         ###   ########.fr       */
+/*   Created: 2023/05/17 11:14:18 by saguesse          #+#    #+#             */
+/*   Updated: 2023/05/17 11:24:37 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
-#include "Data.h"
+#ifndef BASE_HPP
+# define BASE_HPP
 
-int	main(void)
+# include <iostream>
+
+class	Base
 {
-	Data	ptr;
+	public:
+		virtual ~Base(void); //destructor
 
-	std::cout << "ptr adress at the beginning: " << &ptr << std::endl;
+	protected:
+	private:
+};
 
-	Serializer::deserialize(Serializer::serialize(&ptr));
-	ptr.i = 42;
-
-	std::cout << "ptr adress at the end: " << &ptr << std::endl;
-	std::cout << "Value of i: " << ptr.i << std::endl;
-
-
-	return (0);
-}
+#endif

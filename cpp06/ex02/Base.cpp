@@ -1,30 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Base.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/16 17:21:06 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/17 11:03:24 by saguesse         ###   ########.fr       */
+/*   Created: 2023/05/17 11:14:28 by saguesse          #+#    #+#             */
+/*   Updated: 2023/05/17 11:14:36 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Serializer.hpp"
-#include "Data.h"
+#include "Base.hpp"
 
-int	main(void)
+Base::~Base(void)
 {
-	Data	ptr;
+	std::cout << "Base Destructor called" << std::endl;
 
-	std::cout << "ptr adress at the beginning: " << &ptr << std::endl;
-
-	Serializer::deserialize(Serializer::serialize(&ptr));
-	ptr.i = 42;
-
-	std::cout << "ptr adress at the end: " << &ptr << std::endl;
-	std::cout << "Value of i: " << ptr.i << std::endl;
-
-
-	return (0);
+	return ;
 }

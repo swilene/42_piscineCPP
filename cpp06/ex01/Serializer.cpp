@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:21:51 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/16 18:10:47 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/17 10:52:54 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,14 @@ Serializer::~Serializer(void)
 	std::cout << "Serializer Destructor called" << std::endl;
 
 	return ;
+}
+
+uintptr_t Serializer::serialize(Data* ptr)
+{
+	return (reinterpret_cast<uintptr_t>(ptr));
+}
+
+Data* Serializer::deserialize(uintptr_t raw)
+{
+	return (reinterpret_cast<Data *>(raw));
 }

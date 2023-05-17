@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:21:45 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/16 17:33:39 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/17 10:54:02 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include <stdint.h>
+
+# include "Data.h"
 
 class	Serializer
 {
@@ -25,6 +27,7 @@ class	Serializer
 		~Serializer(void); //destructor
 
 		static uintptr_t serialize(Data* ptr);
+		static Data* deserialize(uintptr_t raw);
 };
 
 #endif
