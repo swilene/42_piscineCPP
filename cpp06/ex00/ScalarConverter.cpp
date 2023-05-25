@@ -6,11 +6,13 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 09:42:46 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/16 17:00:08 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/05/24 16:12:46 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+#include <iomanip>
 
 ScalarConverter::ScalarConverter(void)
 {
@@ -93,8 +95,10 @@ void	ScalarConverter::isChar(std::string s)
 		std::cout << c << std::endl;
 	int i = static_cast<int>(c);
 	std::cout << "int: " << i << std::endl;
-	std::cout << "float: " << static_cast<float>(c) << ".0f" << std::endl;
-	std::cout << "double: " << static_cast<double>(c) << ".0" << std::endl;
+	std::cout.precision(1);
+	std::cout << setiosflags(std::ios::fixed);
+	std::cout << "float: " << static_cast<float>(c) << "f" << std::endl;
+	std::cout << "double: " << static_cast<double>(c) << std::endl;
 }
 
 void	ScalarConverter::isInt(std::string s)
@@ -123,6 +127,9 @@ void	ScalarConverter::isInt(std::string s)
 		std::cout << "non displayable" << std::endl;
 	else 
 		std::cout << static_cast<char>(i) << std::endl;
+	std::cout << "int: " << i << std::endl;
+	std::cout.precision(1);
+	std::cout << setiosflags(std::ios::fixed);
 	std::cout << "float: " << static_cast<float>(i) << "f" << std::endl;
 	std::cout << "double: " << static_cast<double>(i) << std::endl;
 }
@@ -162,6 +169,10 @@ void	ScalarConverter::isDouble(std::string s)
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << static_cast<int>(d) << std::endl;
+	//std::cout.precision(1);
+	//std::cout << setiosflags(std::ios::fixed);
+	std::cout.unsetf(std::ios::floatfield);
+	std::cout.precision(5);
 	std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
 }
 

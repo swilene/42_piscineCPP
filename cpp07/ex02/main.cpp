@@ -1,7 +1,22 @@
-#include <iostream>
-#include <Array.hpp>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   main.cpp                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/05/24 14:34:26 by saguesse          #+#    #+#             */
+/*   Updated: 2023/05/25 14:56:54 by saguesse         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#define MAX_VAL 750
+#include <iostream>
+#include <stdlib.h>
+
+#include "Array.hpp"
+
+#define MAX_VAL 7
+
 int main(int, char**)
 {
     Array<int> numbers(MAX_VAL);
@@ -47,7 +62,7 @@ int main(int, char**)
     for (int i = 0; i < MAX_VAL; i++)
     {
         numbers[i] = rand();
-    }
-    delete [] mirror;//
+    }//
+    delete [] mirror;
     return 0;
 }
