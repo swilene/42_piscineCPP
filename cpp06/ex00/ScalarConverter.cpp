@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 09:42:46 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/24 16:12:46 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/15 11:25:34 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,7 @@ ScalarConverter & ScalarConverter::operator=(ScalarConverter const & rhs)
 	std::cout << "ScalarConverter Copy assignment operator called" << std::endl;
 
 	if (this != &rhs)
-	{
-
-	}
+		this->_type = rhs._type;
 
 	return (*this);
 }
@@ -127,7 +125,6 @@ void	ScalarConverter::isInt(std::string s)
 		std::cout << "non displayable" << std::endl;
 	else 
 		std::cout << static_cast<char>(i) << std::endl;
-	std::cout << "int: " << i << std::endl;
 	std::cout.precision(1);
 	std::cout << setiosflags(std::ios::fixed);
 	std::cout << "float: " << static_cast<float>(i) << "f" << std::endl;
@@ -136,7 +133,19 @@ void	ScalarConverter::isInt(std::string s)
 
 void	ScalarConverter::isFloat(std::string s)
 {
+	int i = 0, dec = 0;
+	while (s[i] != '.')
+		i++;
+	i++;
+	while (s[i] != 'f')
+	{
+		i++;
+		dec++;
+	}
+
 	float f = atof(s.c_str());
+	std::cout.precision(dec);
+	std::cout << setiosflags(std::ios::fixed);
 	std::cout << "float: " << f << "f" << std::endl;
 	std::cout << "char: ";
 	if (f < 0 || f > 127)
@@ -155,7 +164,19 @@ void	ScalarConverter::isFloat(std::string s)
 
 void	ScalarConverter::isDouble(std::string s)
 {
+	int i = 0, dec = 0;
+	while (s[i] != '.')
+		i++;
+	i++;
+	while (s[i])
+	{
+		i++;
+		dec++;
+	}
+
 	double d = atof(s.c_str());
+	std::cout.precision(dec);
+	std::cout << setiosflags(std::ios::fixed);
 	std::cout << "double: " << d << std::endl;
 	std::cout << "char: ";
 	if (d < 0 || d > 127)
@@ -169,10 +190,6 @@ void	ScalarConverter::isDouble(std::string s)
 		std::cout << "impossible" << std::endl;
 	else
 		std::cout << static_cast<int>(d) << std::endl;
-	//std::cout.precision(1);
-	//std::cout << setiosflags(std::ios::fixed);
-	std::cout.unsetf(std::ios::floatfield);
-	std::cout.precision(5);
 	std::cout << "float: " << static_cast<float>(d) << "f" << std::endl;
 }
 

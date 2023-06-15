@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:22:30 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/17 15:33:03 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/15 13:37:26 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,23 +20,41 @@
 #include <exception>
 #include <typeinfo>
 
-/*void identify(Base& p)
+void identify(Base& p)
 {
-	
-}*/
+	try {
+		Base & newBase = dynamic_cast<A &>(p);
+		std::cout << "I'm a reference to A" << std::endl;
+	}
+	catch (std::bad_cast &bc) {
+		try {
+			Base & newBase = dynamic_cast<B &>(p);
+			std::cout << "I'm a reference to B" << std::endl;
+		}
+		catch (std::bad_cast &bc) {
+			try {
+				Base & newBase = dynamic_cast<C &>(p);
+				std::cout << "I'm a reference to C" << std::endl;
+			}
+			catch (std::bad_cast &bc) {
+				std::cout << "unknown base, conversion not ok: " << bc.what() <<std::endl;
+			}
+		}
+	}
+}
 
 void identify(Base* p)
 {
-	Base* newBase;
-	try
-	{
-		newBase = dynamic_cast<Base*>(p);
-		std::cout << "A" << std::endl;
+	Base* newBase = dynamic_cast<A *>(p);
+	if (newBase == NULL) {
+		Base* newBase = dynamic_cast<B *>(p);
+		if (newBase == NULL)
+			std::cout << "I'm a pointer to C" << std::endl;
+		else
+			std::cout << "I'm a pointer to B" << std::endl;
 	}
-	catch (std::bad_cast &bc)
-	{
-
-	}
+	else
+		std::cout << "I'm a pointer to A" << std::endl;
 }
 
 Base * generate(void)
@@ -64,8 +82,13 @@ Base * generate(void)
 int	main()
 {
 	Base *p = generate();
+	
+	std::cout << std::endl;
+	
 	identify(p);
-	//identify(&p);
+	identify(*p);
+
+	std::cout << std::endl;
 
 	delete p;
 

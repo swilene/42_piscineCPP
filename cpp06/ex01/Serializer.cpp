@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/16 17:21:51 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/17 10:52:54 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/15 14:12:56 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,7 @@ Serializer & Serializer::operator=(Serializer const & rhs)
 	std::cout << "Serializer Copy assignment operator called" << std::endl;
 
 	if (this != &rhs)
-	{
-
-	}
+		*this = rhs;
 
 	return (*this);
 }

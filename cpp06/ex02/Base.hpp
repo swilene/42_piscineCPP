@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:14:18 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/17 11:24:37 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/15 12:56:10 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,6 @@ class	Base
 {
 	public:
 		virtual ~Base(void); //destructor
-
-	protected:
-	private:
 };
 
 #endif
