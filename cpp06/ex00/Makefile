@@ -6,11 +6,11 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/05/16 17:13:21 by saguesse         ###   ########.fr        #
+#    Updated: 2023/06/15 14:21:03 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = convert
+NAME = scalarConverter
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98

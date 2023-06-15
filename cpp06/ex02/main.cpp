@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/17 11:22:30 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/15 13:37:26 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/15 14:36:17 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,8 +48,10 @@ void identify(Base* p)
 	Base* newBase = dynamic_cast<A *>(p);
 	if (newBase == NULL) {
 		Base* newBase = dynamic_cast<B *>(p);
-		if (newBase == NULL)
+		if (newBase == NULL) {
+			Base* newBase = dynamic_cast<C *>(p);
 			std::cout << "I'm a pointer to C" << std::endl;
+		}
 		else
 			std::cout << "I'm a pointer to B" << std::endl;
 	}
