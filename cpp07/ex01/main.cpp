@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/23 17:34:54 by saguesse          #+#    #+#             */
-/*   Updated: 2023/05/24 12:11:18 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/15 15:57:18 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ int	main()
 	std::cout << "After iter:	";
 	for (int i = 0; i < 5; i++)
 		std::cout << tab[i] << " ";
+	std::cout << std::endl;
+
 	std::cout << std::endl;
 	
 	char c[5] = {'a','b','c','d','e'};
