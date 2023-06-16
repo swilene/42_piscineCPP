@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 14:55:37 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/08 12:18:03 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/16 11:26:30 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,22 +19,41 @@
 
 int	main()
 {
-	//std::vector<int> tab;
-	//std::list<int> tab;
-	std::deque<int> tab;
+	std::vector<int> v;
+	std::list<int> l;
+	std::deque<int> d;
 	int res, nb = 42;
 
 	srand((unsigned) time(NULL));
 	for (int i = 0; i < 20; i++) {
 		int random = 30 + (rand() % 50);
-		tab.push_back(random);
+		v.push_back(random);
+		l.push_back(random);
+		d.push_back(random);
+
 	}
 	try {
-		res = easyfind(tab, nb);
-		std::cout << res << ": found in container" << std::endl;
+		res = easyfind(v, nb);
+		std::cout << res << ": found in the vector" << std::endl;
 	}
 	catch (std::exception &e) {
-		std::cout << nb << e.what() << std::endl;
+		std::cout << nb << e.what() << " vector" << std::endl;
+	}
+
+	try {
+		res = easyfind(l, nb);
+		std::cout << res << ": found in the list" << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << nb << e.what() << " list" << std::endl;
+	}
+
+	try {
+		res = easyfind(d, nb);
+		std::cout << res << ": found in the deque" << std::endl;
+	}
+	catch (std::exception &e) {
+		std::cout << nb << e.what() << " deque" << std::endl;
 	}
 
 	return (0);

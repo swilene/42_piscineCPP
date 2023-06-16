@@ -6,12 +6,14 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 12:01:42 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/09 12:01:59 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/16 13:32:21 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <stack>
+
+#include "MutantStack.hpp"
 
 int main()
 {

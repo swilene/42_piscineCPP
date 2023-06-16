@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 11:18:20 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/09 11:51:35 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/16 11:29:48 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	main()
 {
 	srand((unsigned) time(NULL));
 
-	unsigned int N = 100;	
+	unsigned int N = 10;	
 	Span	sp(N);
 	Span	otherSp(N);
 

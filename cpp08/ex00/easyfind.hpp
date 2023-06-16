@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/07 13:01:22 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/08 10:57:53 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/16 11:25:15 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef EASYFIND_HPP
@@ -17,7 +17,7 @@
 class	NotFoundException : public std::exception
 {
 	public:
-		const char* what() const throw() { return (": not found in container"); }
+		const char* what() const throw() { return (": not found in the"); }
 };
 
 template <typename T>

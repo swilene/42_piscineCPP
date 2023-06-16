@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/09 12:09:58 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/09 12:11:39 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/16 13:32:42 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,14 @@
 
 #include <stack>
 
-class	MutantStack : public std::stack
+template <class T>
+class	MutantStack : public std::stack<T>
 {
+	public:
+		MutantStack(void) {} //default constructor
+		MutantStack(MutantStack const & src); //copy constructor
+		MutantStack & operator=(MutantStack const & rhs); //copy assignment operator
+		~MutantStack(void); //destructor
 	
 };
 

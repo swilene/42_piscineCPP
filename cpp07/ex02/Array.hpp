@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 14:35:30 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/15 18:40:25 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/16 11:15:52 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ class	Array
 			std::cout << "Array Default contructor called" << std::endl;
 		}
 
-		Array(int n) : _tab(new T[n]), _size(n) //parametric constructor
+		Array(unsigned int n) : _tab(new T[n]), _size(n) //parametric constructor
 		{
 			std::cout << "Parametric Default contructor called" << std::endl;
 		}
@@ -28,11 +28,10 @@ class	Array
 		{
 			std::cout << "Array Copy constructor called" << std::endl;
 
-			this->~Array();
-			this->_size = src._size;
-			this->_tab = new T[src._size];
-			for (int i = 0; i < this->_size; i++)
-				this->_tab[i] = src._tab[i];
+			_tab = new T[src._size];
+			for (unsigned int i = 0; i < src._size; i++)
+				_tab[i] = src._tab[i];
+			_size = src._size;
 		}
 
 		Array & operator=(Array const & rhs) //copy assignment operator
@@ -41,10 +40,11 @@ class	Array
 
 			if (this != &rhs)
 			{
-				this->_size = rhs._size;
-				this->_tab = new T[rhs._size];
-				for (int i = 0; i < this->_size; i++)
-					this->_tab[i] = rhs._tab[i];
+				delete [] _tab;
+				_tab = new T[rhs._size];
+				for (int i = 0; i < rhs._size; i++)
+					_tab[i] = rhs._tab[i];
+				_size = rhs._size;
 			}
 			return (*this);
 		}
@@ -57,7 +57,7 @@ class	Array
 		}
 
 		T &operator[] (int index){
-			if (index > _size || index < 0)
+			if (static_cast<unsigned int>(index) > _size || index < 0)
 				throw std::exception();
 			return (_tab[index]);
 		}
@@ -66,6 +66,6 @@ class	Array
 
 	private:
 		T * _tab;
-		int _size;
+		unsigned int _size;
 
 };
