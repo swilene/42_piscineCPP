@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/16 15:09:51 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/16 18:25:18 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/16 18:35:23 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,12 +46,17 @@ int	main(int argc, char **argv)
 	}
 
 	RPN rpn(str);
+
+	std::cout << std::endl;
+
 	try {
 		rpn.calculate();
 	}
 	catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
 	}
+
+	std::cout << std::endl;
 
 	return (0);
 }
