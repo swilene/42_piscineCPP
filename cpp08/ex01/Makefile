@@ -6,11 +6,11 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/06/09 11:50:37 by saguesse         ###   ########.fr        #
+#    Updated: 2023/06/17 15:33:26 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = easyfind
+NAME = span
 
 CXX = c++
 CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
