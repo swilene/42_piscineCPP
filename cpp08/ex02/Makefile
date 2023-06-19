@@ -6,7 +6,7 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/06/16 12:04:59 by saguesse         ###   ########.fr        #
+#    Updated: 2023/06/19 15:04:37 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 
 RM = rm -f
 
-HEADER_FILES = MutantStack.hpp \
+HEADER_FILES = MutantStack.hpp
 
 SRCS_FILES = main.cpp \
 

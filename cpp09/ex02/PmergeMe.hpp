@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 14:57:11 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/17 19:31:40 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/19 18:28:10 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,16 @@ class	PmergeMe
 		PmergeMe & operator=(PmergeMe const & rhs); //copy assignment operator
 		~PmergeMe(void); //destructor
 
-		void	creatingVector(int argc, char** argv);
-		void	makingPairs();
-		void	sortingPairs();
-		//void	sortList();
+		int	getVSize();
+		int	getPvSize();
+
+		void	createVector(int argc, char** argv);
+		void	makePairs();
+		void	sortEachPairs();
+		void	insertSort(int left, int right);
+		void	insert(int left, int midPoint, int right);
+		void	sortVector();
+		void	insertLast(int start, int end);
 
 		class TooBigException : public std::exception
 		{
@@ -36,7 +42,7 @@ class	PmergeMe
 		};
 
 	private:
-		unsigned int	_last;
+		unsigned int	_last, _vSize, _pvSize;
 		std::vector<unsigned int> _v;
 		std::vector<std::pair<unsigned int, unsigned int> > _pv;
 		std::list<unsigned int> _l;

@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 14:37:21 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/17 19:31:25 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/19 18:24:56 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,13 @@ int	main(int argc, char** argv)
 	PmergeMe	pmergeme;
 
 	try {
-		pmergeme.creatingVector(argc, argv);
-		pmergeme.makingPairs();
-		pmergeme.sortingPairs();
+		pmergeme.createVector(argc, argv);
+		pmergeme.makePairs();
+		pmergeme.sortEachPairs();
+		pmergeme.insertSort(0, pmergeme.getPvSize() - 1);
+		pmergeme.sortVector();
+		if (pmergeme.getVSize() % 2)
+			pmergeme.insertLast(0, pmergeme.getVSize() - 1);
 	}
 	catch (std::exception & e) {
 		std::cout << e.what() << std::endl;

@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/24 14:35:30 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/16 11:15:52 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/19 14:00:15 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,8 @@ class	Array
 		Array(Array const & src) //copy constructor
 		{
 			std::cout << "Array Copy constructor called" << std::endl;
+			*this = src;
 
-			_tab = new T[src._size];
-			for (unsigned int i = 0; i < src._size; i++)
-				_tab[i] = src._tab[i];
-			_size = src._size;
 		}
 
 		Array & operator=(Array const & rhs) //copy assignment operator
@@ -42,7 +39,7 @@ class	Array
 			{
 				delete [] _tab;
 				_tab = new T[rhs._size];
-				for (int i = 0; i < rhs._size; i++)
+				for (size_t i = 0; i < rhs._size; i++)
 					_tab[i] = rhs._tab[i];
 				_size = rhs._size;
 			}
