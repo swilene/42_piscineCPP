@@ -6,7 +6,7 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/06/18 18:46:52 by saguesse         ###   ########.fr        #
+#    Updated: 2023/06/20 17:51:02 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,11 @@ CXXFLAGS = -Wall -Werror -Wextra -std=c++98 -g3
 RM = rm -f
 
 HEADER_FILES = PmergeMe.hpp \
+			   Vectors.hpp \
 
 SRCS_FILES = main.cpp \
 			 PmergeMe.cpp \
+			 Vectors.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
 

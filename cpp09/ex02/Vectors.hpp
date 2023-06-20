@@ -1,31 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PmergeMe.hpp                                       :+:      :+:    :+:   */
+/*   Vectors.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/17 14:57:11 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/20 17:53:53 by saguesse         ###   ########.fr       */
+/*   Created: 2023/06/20 17:36:44 by saguesse          #+#    #+#             */
+/*   Updated: 2023/06/20 17:54:24 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PMERGEME_HPP
-# define PMERGEME_HPP
+#ifndef VECTORS_HPP
+# define VECTORS_HPP
 
-#include <vector>
-#include <list>
+#include "PmergeMe.hpp"
 
-class	PmergeMe
+class	Vectors : public PmergeMe
 {
 	public:
-		PmergeMe(void); //default constructor
-		PmergeMe(PmergeMe const & src); //copy constructor
-		PmergeMe & operator=(PmergeMe const & rhs); //copy assignment operator
-		virtual ~PmergeMe(void); //destructor
+		Vectors(void); //default constructor
+		Vectors(Vectors const & src); //copy constructor
+		Vectors & operator=(Vectors const & rhs); //copy assignment operator
+		~Vectors(void); //destructor
 
-		//int	getLSize();
-		//int	getPairsLSize();
+		int	getVSize() const;
+		int	getPairsVSize() const;
 
 		virtual void	createContainer(int argc, char** argv);
 		virtual void	makePairs();
@@ -35,18 +34,11 @@ class	PmergeMe
 		virtual void	sortContainer();
 		virtual void	insertLast(int start, int end);
 
-		class TooBigException : public std::exception
-		{
-			public :
-				const char* what() const throw();
-		};
+	private:
+		unsigned int _vSize, _pairsVSize;
+		std::vector<unsigned int> _v;
+		std::vector<std::pair<unsigned int, unsigned int> > _pairsV;
 
-	protected:
-		unsigned int _last;
-
-		unsigned int _lSize, _pairsLSize;
-		std::list<unsigned int> _l;
-		std::list<std::pair<unsigned int, unsigned int> > _pairsL;
 };
 
 #endif

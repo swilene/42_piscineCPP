@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 14:37:21 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/19 18:24:56 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/20 18:00:29 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 #include <cstdlib>
 
 #include "PmergeMe.hpp"
+#include "Vectors.hpp"
 
 int	main(int argc, char** argv)
 {
@@ -32,16 +33,16 @@ int	main(int argc, char** argv)
 		}
 	}
 
-	PmergeMe	pmergeme;
+	PmergeMe* v = new Vectors();
 
 	try {
-		pmergeme.createVector(argc, argv);
-		pmergeme.makePairs();
-		pmergeme.sortEachPairs();
-		pmergeme.insertSort(0, pmergeme.getPvSize() - 1);
-		pmergeme.sortVector();
-		if (pmergeme.getVSize() % 2)
-			pmergeme.insertLast(0, pmergeme.getVSize() - 1);
+		v->createContainer(argc, argv);
+		v->makePairs();
+		v->sortEachPairs();
+		v->insertSort(0, v->getPairsVSize() - 1);
+		v->sortVector();
+		if (v->getVSize() % 2)
+			v->insertLast(0, v->getVSize() - 1);
 	}
 	catch (std::exception & e) {
 		std::cout << e.what() << std::endl;
