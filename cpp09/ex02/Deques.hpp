@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Vectors.hpp                                        :+:      :+:    :+:   */
+/*   Deques.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/06/20 17:36:44 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/21 16:44:30 by saguesse         ###   ########.fr       */
+/*   Created: 2023/06/21 16:44:04 by saguesse          #+#    #+#             */
+/*   Updated: 2023/06/21 17:32:52 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef VECTORS_HPP
-# define VECTORS_HPP
+#ifndef LISTS_HPP
+# define LISTS_HPP
 
 #include "PmergeMe.hpp"
 
-#include <vector>
+#include <deque>
 
-class	Vectors : public PmergeMe
+class	Deques : public PmergeMe
 {
 	public:
-		Vectors(void); //default constructor
-		Vectors(Vectors const & src); //copy constructor
-		Vectors & operator=(Vectors const & rhs); //copy assignment operator
-		~Vectors(void); //destructor
+		Deques(void); //default constructor
+		Deques(Deques const & src); //copy constructor
+		Deques & operator=(Deques const & rhs); //copy assignment operator
+		~Deques(void); //destructor
 
-		int	getVSize() const;
-		int	getPairsVSize() const;
+		int	getDSize() const;
+		int	getPairsDSize() const;
 
 		virtual void	createContainer(int argc, char** argv);
 		virtual void	makePairs();
@@ -37,10 +37,9 @@ class	Vectors : public PmergeMe
 		virtual void	insertLast(int start, int end);
 
 	private:
-		unsigned int _vSize, _pairsVSize;
-		std::vector<unsigned int> _v;
-		std::vector<std::pair<unsigned int, unsigned int> > _pairsV;
-
+		unsigned int _dSize, _pairsDSize;
+		std::deque<unsigned int> _d;
+		std::deque<std::pair<unsigned int, unsigned int> > _pairsD;
 };
 
 #endif

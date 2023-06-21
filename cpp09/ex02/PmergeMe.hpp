@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 14:57:11 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/20 17:53:53 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/21 14:24:08 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,13 @@ class	PmergeMe
 		//int	getLSize();
 		//int	getPairsLSize();
 
-		virtual void	createContainer(int argc, char** argv);
-		virtual void	makePairs();
-		virtual void	sortEachPairs();
-		virtual void	insertSort(int left, int right);
-		virtual void	insert(int left, int midPoint, int right);
-		virtual void	sortContainer();
-		virtual void	insertLast(int start, int end);
+		virtual void	createContainer(int argc, char** argv) = 0;
+		virtual void	makePairs() = 0;
+		virtual void	sortEachPairs() = 0;
+		virtual void	insertSort(int left, int right) = 0;
+		virtual void	insert(int left, int midPoint, int right) = 0;
+		virtual void	sortContainer() = 0;
+		virtual void	insertLast(int start, int end) = 0;
 
 		class TooBigException : public std::exception
 		{

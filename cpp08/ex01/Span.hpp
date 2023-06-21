@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 11:15:31 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/17 15:14:55 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/21 15:58:01 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,18 +15,6 @@
 
 #include <vector>
 
-class	MaxSizeException : public std::exception
-{
-	public:
-		const char* what() const throw() { return ("You've reached the max size, you can't add an other number"); }
-};
-
-class	LessThanTwoException : public std::exception
-{
-	public :
-		const char* what() const throw() { return ("You need at least two numbers"); }
-};
-
 class	Span
 {
 	public:
@@ -34,6 +22,18 @@ class	Span
 		Span(Span const & src); //copy constructor
 		Span & operator=(Span const & rhs); //copy assignment operator
 		~Span(void); //destructor
+
+		class	MaxSizeException : public std::exception
+		{
+			public:
+				const char* what() const throw();
+		};
+
+		class	LessThanTwoException : public std::exception
+		{
+			public :
+				const char* what() const throw();
+		};
 
 		unsigned int	getSize() const;
 		void			setTab();

@@ -6,12 +6,13 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/20 17:39:00 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/20 17:50:11 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/21 16:47:21 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Vectors.hpp"
 
+#include <vector>
 #include <iostream>
 #include <cstdlib>
 #include <limits>
@@ -52,17 +53,17 @@ Vectors::~Vectors(void)
 	return ;
 }
 
-int	PmergeMe::getVSize() const
+int	Vectors::getVSize() const
 {
 	return (this->_vSize);
 }
 
-int	PmergeMe::getPairsVSize() const
+int	Vectors::getPairsVSize() const
 {
 	return (this->_pairsVSize);
 }
 
-void	PmergeMe::createContainer(int argc, char** argv)
+void	Vectors::createContainer(int argc, char** argv)
 {
 	long unsigned int ui;
 	size_t size = 0;
@@ -101,7 +102,7 @@ void	PmergeMe::createContainer(int argc, char** argv)
 	_vSize = _v.size();
 }
 
-void	PmergeMe::makePairs()
+void	Vectors::makePairs()
 {
 	if (_vSize % 2) {
 		_last = _v.back();
@@ -113,7 +114,7 @@ void	PmergeMe::makePairs()
 	_pairsVSize = _pairsV.size();
 }
 
-void	PmergeMe::sortEachPairs()
+void	Vectors::sortEachPairs()
 {
 	for (std::vector<std::pair<unsigned int, unsigned int> >::iterator it = _pairsV.begin(); it < _pairsV.end(); it++) {
 		if (it->first > it->second)
@@ -121,7 +122,7 @@ void	PmergeMe::sortEachPairs()
 	}
 }
 
-void	PmergeMe::insert(int left, int midPoint, int right)
+void	Vectors::insert(int left, int midPoint, int right)
 {
 	int leftIndex = left; // starting index for the left vector
 	int	rightIndex = midPoint + 1; // startig index for the right vector
@@ -158,18 +159,19 @@ void	PmergeMe::insert(int left, int midPoint, int right)
 	}
 }
 
-void	PmergeMe::insertSort(int left, int right)
+void	Vectors::insertSort(int left, int right)
 {
 	if (left < right) {
 		int midPoint = (left + right) / 2;
-		PmergeMe::insertSort(left, midPoint);
-		PmergeMe::insertSort(midPoint + 1, right);
+		Vectors::insertSort(left, midPoint);
+		Vectors::insertSort(midPoint + 1, right);
 		insert(left, midPoint, right);
 	}
 }
 
-void	PmergeMe::sortContainer()
+void	Vectors::sortContainer()
 {
+	std::vector<std::pair<unsigned int, unsigned int> >::iterator it = _pairsV.begin();
 	_v.push_back(it->first);
 	for (; it < _pairsV.end(); it++)
 		_v.push_back(it->second);
@@ -201,7 +203,7 @@ void	PmergeMe::sortContainer()
 	}
 }
 
-void	PmergeMe::insertLast(int start, int end)
+void	Vectors::insertLast(int start, int end)
 {
 	int middle = (start+ end) / 2;
 	std::cout << "start: " << start << ", end: " << end << ", last: " << _last << ", middle: " << middle << std::endl;
@@ -213,7 +215,7 @@ void	PmergeMe::insertLast(int start, int end)
 		return ;
 	}
 	if (_v[middle] > _last)
-		PmergeMe::insertLast(start, middle - 1);
+		Vectors::insertLast(start, middle - 1);
 	if (_v[middle] < _last)
-		PmergeMe::insertLast(middle + 1, end);
+		Vectors::insertLast(middle + 1, end);
 }

@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 11:18:20 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/16 11:29:48 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/21 13:53:28 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,6 @@ int	main()
 
 	unsigned int N = 10;	
 	Span	sp(N);
-	Span	otherSp(N);
-
-	otherSp.setTab();
 	
 	std::cout << std::endl;
 
@@ -41,7 +38,7 @@ int	main()
 
 	try {
 		unsigned int i = sp.shortestSpan();
-		std::cout << "shortest span: " << i << std::endl;
+		std::cout << "sp shortest span: " << i << std::endl;
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
@@ -49,11 +46,20 @@ int	main()
 
 	try {
 		unsigned int i = sp.longestSpan();
-		std::cout << "longest span: " << i << std::endl;
+		std::cout << "sp longest span: " << i << std::endl;
 	}
 	catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
+
+	std::cout << std::endl;
+	
+	Span	otherSp(sp);
+
+	std::cout << std::endl;
+	
+	std::cout << "otherSp shortest span: " << otherSp.shortestSpan() << std::endl;
+	std::cout << "otherSp longest span: " << otherSp.longestSpan() << std::endl;
 
 	std::cout << std::endl;
 

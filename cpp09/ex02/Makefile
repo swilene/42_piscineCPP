@@ -6,7 +6,7 @@
 #    By: saguesse <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/06 17:24:07 by saguesse          #+#    #+#              #
-#    Updated: 2023/06/20 17:51:02 by saguesse         ###   ########.fr        #
+#    Updated: 2023/06/21 17:28:07 by saguesse         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,10 +19,12 @@ RM = rm -f
 
 HEADER_FILES = PmergeMe.hpp \
 			   Vectors.hpp \
+			   Deques.hpp \
 
 SRCS_FILES = main.cpp \
 			 PmergeMe.cpp \
 			 Vectors.cpp \
+			 Deques.cpp \
 
 OBJS = $(SRCS_FILES:.cpp=.o)
 

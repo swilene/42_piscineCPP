@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/17 14:37:21 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/20 18:00:29 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/21 17:33:09 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 #include "PmergeMe.hpp"
 #include "Vectors.hpp"
+#include "Deques.hpp"
 
 int	main(int argc, char** argv)
 {
@@ -33,14 +34,15 @@ int	main(int argc, char** argv)
 		}
 	}
 
-	PmergeMe* v = new Vectors();
+	Vectors*	v = new Vectors();
+	Deques*		d = new Deques();
 
 	try {
 		v->createContainer(argc, argv);
 		v->makePairs();
 		v->sortEachPairs();
 		v->insertSort(0, v->getPairsVSize() - 1);
-		v->sortVector();
+		v->sortContainer();
 		if (v->getVSize() % 2)
 			v->insertLast(0, v->getVSize() - 1);
 	}
@@ -48,7 +50,21 @@ int	main(int argc, char** argv)
 		std::cout << e.what() << std::endl;
 	}
 
-	//pmergeme.sortList();
+	try {
+		d->createContainer(argc, argv);
+		d->makePairs();
+		d->sortEachPairs();
+		d->insertSort(0, d->getPairsDSize() - 1);
+		d->sortContainer();
+		if (d->getDSize() % 2)
+			d->insertLast(0, d->getDSize() - 1);
+	}
+	catch (std::exception & e) {
+		std::cout << e.what() << std::endl;
+	}
+
+	delete d;
+	delete v;
 
 	return (0);
 }

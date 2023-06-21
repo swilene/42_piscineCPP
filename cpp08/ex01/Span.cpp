@@ -6,7 +6,7 @@
 /*   By: saguesse <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/06/08 11:18:05 by saguesse          #+#    #+#             */
-/*   Updated: 2023/06/17 15:15:03 by saguesse         ###   ########.fr       */
+/*   Updated: 2023/06/21 16:04:19 by saguesse         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,8 @@ Span & Span::operator=(Span const & rhs)
 
 	if (this != &rhs)
 	{
-
+		this->_size = rhs._size;
+		this->_tab = rhs._tab;
 	}
 
 	return (*this);
@@ -100,4 +101,14 @@ unsigned int	Span::longestSpan() const
 	}
 	
 	return (*std::max_element(this->_tab.begin(), this->_tab.end()) - *std::min_element(this->_tab.begin(), this->_tab.end()));
+}
+
+const char* Span::MaxSizeException::what() const throw()
+{
+	return ("You've reached the max size, you can't add an other number");
+}
+
+const char* Span::LessThanTwoException::what() const throw()
+{
+	return ("You need at least two numbers");
 }
